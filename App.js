@@ -1,105 +1,45 @@
 import * as React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {View} from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createMaterialBottomTabNavigator} from 'react-navigation-material-bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-class HomeScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Home Screen</Text>
-      </View>
-    );
-  }
-}
-class ProfileScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Profile Screen</Text>
-      </View>
-    );
-  }
-}
-class ImageScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Image Screen</Text>
-      </View>
-    );
-  }
-}
-class CartScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Cart Screen</Text>
-      </View>
-    );
-  }
-}
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+import {WealthScreen, HistoryScreen, ProfileScreen} from './src/Screens';
+
+const TabNavigator = createMaterialBottomTabNavigator({
+  Wealth: {
+    screen: WealthScreen,
+    navigationOptions: {
+      tabBarLabel: 'Wealth',
+      tabBarIcon: ({tintColor}) => (
+        <View>
+          <Icon style={[{color: tintColor}]} size={25} name={'md-infinite'} />
+        </View>
+      ),
+    },
+  },
+  History: {
+    screen: HistoryScreen,
+    navigationOptions: {
+      tabBarLabel: 'History',
+      tabBarIcon: ({tintColor}) => (
+        <View>
+          <Icon style={[{color: tintColor}]} size={25} name={'analytics'} />
+        </View>
+      ),
+    },
+  },
+  Profile: {
+    screen: ProfileScreen,
+    navigationOptions: {
+      tabBarLabel: 'Profile',
+      tabBarIcon: ({tintColor}) => (
+        <View>
+          <Icon style={[{color: tintColor}]} size={25} name={'person-circle'} />
+        </View>
+      ),
+    },
   },
 });
-const TabNavigator = createMaterialBottomTabNavigator(
-  {
-    Home: {
-      screen: HomeScreen,
-      navigationOptions: {
-        tabBarLabel: 'Home',
-        tabBarIcon: ({tintColor}) => (
-          <View>
-            <Icon style={[{color: tintColor}]} size={25} name={'ios-home'} />
-          </View>
-        ),
-      },
-    },
-    Profile: {
-      screen: ProfileScreen,
-      navigationOptions: {
-        tabBarLabel: 'Profile',
-        tabBarIcon: ({tintColor}) => (
-          <View>
-            <Icon style={[{color: tintColor}]} size={25} name={'ios-person'} />
-          </View>
-        ),
-      },
-    },
-    Image: {
-      screen: ImageScreen,
-      navigationOptions: {
-        tabBarLabel: 'History',
-        tabBarIcon: ({tintColor}) => (
-          <View>
-            <Icon style={[{color: tintColor}]} size={25} name={'ios-images'} />
-          </View>
-        ),
-      },
-    },
-    Cart: {
-      screen: CartScreen,
-      navigationOptions: {
-        tabBarLabel: 'Cart',
-        tabBarIcon: ({tintColor}) => (
-          <View>
-            <Icon style={[{color: tintColor}]} size={25} name={'ios-cart'} />
-          </View>
-        ),
-      },
-    },
-  },
-  {
-    initialRouteName: 'Home',
-    activeColor: '#f0edf6',
-    inactiveColor: '#226557',
-    barStyle: {backgroundColor: '#3BAD87'},
-  },
-);
 
 export default createAppContainer(TabNavigator);
