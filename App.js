@@ -4,11 +4,11 @@ import {createAppContainer} from 'react-navigation';
 import {createMaterialBottomTabNavigator} from 'react-navigation-material-bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import {WealthScreen, HistoryScreen, ProfileScreen} from './src/Screens';
+import {WealthMenu, HistoryMenu, ProfileMenu} from './src/Menus';
 
 const TabNavigator = createMaterialBottomTabNavigator({
   Wealth: {
-    screen: WealthScreen,
+    screen: WealthMenu,
     navigationOptions: {
       tabBarLabel: 'Wealth',
       tabBarIcon: ({tintColor}) => (
@@ -19,7 +19,7 @@ const TabNavigator = createMaterialBottomTabNavigator({
     },
   },
   History: {
-    screen: HistoryScreen,
+    screen: HistoryMenu,
     navigationOptions: {
       tabBarLabel: 'History',
       tabBarIcon: ({tintColor}) => (
@@ -30,7 +30,7 @@ const TabNavigator = createMaterialBottomTabNavigator({
     },
   },
   Profile: {
-    screen: ProfileScreen,
+    screen: ProfileMenu,
     navigationOptions: {
       tabBarLabel: 'Profile',
       tabBarIcon: ({tintColor}) => (
