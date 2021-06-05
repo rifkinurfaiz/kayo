@@ -5,11 +5,11 @@ import { TabView, SceneMap } from 'react-native-tab-view';
 import useHistoryTab from './useHistoryTab';
 
 const FirstRoute = () => (
-  <View style={{ flex: 1, backgroundColor: '#ff4081' }} />
+  <View style={{ flex: 1, backgroundColor: '#ffffff' }} />
 );
 
 const SecondRoute = () => (
-  <View style={{ flex: 1, backgroundColor: '#673ab7' }} />
+  <View style={{ flex: 1, backgroundColor: '#ffffff' }} />
 );
 
 const History = props => {

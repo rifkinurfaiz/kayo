@@ -5,43 +5,41 @@ import { createMaterialBottomTabNavigator } from 'react-navigation-material-bott
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import { WealthMenu, HistoryMenu, ProfileMenu } from './src/Menus';
+import I18n from './src/Localization';
+
+const renderIcon = (color, icon) => (
+  <View>
+    <Icon style={[{ color }]} size={25} name={icon} />
+  </View>
+);
+
+const defaultOptions = {
+  barStyle: { backgroundColor: '#281b39' }
+};
 
 const TabNavigator = createMaterialBottomTabNavigator({
   Wealth: {
     screen: WealthMenu,
     navigationOptions: {
-      tabBarLabel: 'Wealth',
-      tabBarIcon: ({ tintColor }) => (
-        <View>
-          <Icon style={[{ color: tintColor }]} size={25} name={'md-infinite'} />
-        </View>
-      )
+      tabBarLabel: I18n.t('wealth'),
+      tabBarIcon: ({ tintColor }) => renderIcon(tintColor, 'md-infinite'),
+      ...defaultOptions
     }
   },
   History: {
     screen: HistoryMenu,
     navigationOptions: {
-      tabBarLabel: 'History',
-      tabBarIcon: ({ tintColor }) => (
-        <View>
-          <Icon style={[{ color: tintColor }]} size={25} name={'analytics'} />
-        </View>
-      )
+      tabBarLabel: I18n.t('history'),
+      tabBarIcon: ({ tintColor }) => renderIcon(tintColor, 'analytics'),
+      ...defaultOptions
     }
   },
   Profile: {
     screen: ProfileMenu,
     navigationOptions: {
-      tabBarLabel: 'Profile',
-      tabBarIcon: ({ tintColor }) => (
-        <View>
-          <Icon
-            style={[{ color: tintColor }]}
-            size={25}
-            name={'person-circle'}
-          />
-        </View>
-      )
+      tabBarLabel: I18n.t('profile'),
+      tabBarIcon: ({ tintColor }) => renderIcon(tintColor, 'person-circle'),
+      ...defaultOptions
     }
   }
 });
