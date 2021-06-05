@@ -1,1 +1,1 @@
-export {default as HistoryContainer} from './History';
+export { default as HistoryContainer } from './History';

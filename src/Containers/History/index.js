@@ -1,1 +1,1 @@
-export {default} from './History.container';
+export { default } from './History.container';

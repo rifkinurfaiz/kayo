@@ -1,19 +1,19 @@
 import * as React from 'react';
-import {View} from 'react-native';
-import {createAppContainer} from 'react-navigation';
-import {createMaterialBottomTabNavigator} from 'react-navigation-material-bottom-tabs';
+import { View } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import {WealthMenu, HistoryMenu, ProfileMenu} from './src/Menus';
+import { WealthMenu, HistoryMenu, ProfileMenu } from './src/Menus';
 
 const TabNavigator = createMaterialBottomTabNavigator({
   Wealth: {
     screen: WealthMenu,
     navigationOptions: {
       tabBarLabel: 'Wealth',
-      tabBarIcon: ({tintColor}) => (
+      tabBarIcon: ({ tintColor }) => (
         <View>
-          <Icon style={[{color: tintColor}]} size={25} name={'md-infinite'} />
+          <Icon style={[{ color: tintColor }]} size={25} name={'md-infinite'} />
         </View>
       ),
     },
@@ -22,9 +22,9 @@ const TabNavigator = createMaterialBottomTabNavigator({
     screen: HistoryMenu,
     navigationOptions: {
       tabBarLabel: 'History',
-      tabBarIcon: ({tintColor}) => (
+      tabBarIcon: ({ tintColor }) => (
         <View>
-          <Icon style={[{color: tintColor}]} size={25} name={'analytics'} />
+          <Icon style={[{ color: tintColor }]} size={25} name={'analytics'} />
         </View>
       ),
     },
@@ -33,9 +33,13 @@ const TabNavigator = createMaterialBottomTabNavigator({
     screen: ProfileMenu,
     navigationOptions: {
       tabBarLabel: 'Profile',
-      tabBarIcon: ({tintColor}) => (
+      tabBarIcon: ({ tintColor }) => (
         <View>
-          <Icon style={[{color: tintColor}]} size={25} name={'person-circle'} />
+          <Icon
+            style={[{ color: tintColor }]}
+            size={25}
+            name={'person-circle'}
+          />
         </View>
       ),
     },
