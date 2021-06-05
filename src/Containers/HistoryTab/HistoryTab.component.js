@@ -1,27 +1,33 @@
 import * as React from 'react';
-import { View } from 'react-native';
-import { TabView, SceneMap } from 'react-native-tab-view';
+import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 
 import useHistoryTab from './useHistoryTab';
+import HistoryTabDetail from '../HistoryTabDetail';
+import styles from './HistoryTab.styles';
 
-const FirstRoute = () => (
-  <View style={{ flex: 1, backgroundColor: '#ffffff' }} />
-);
+const detailTab = () => <HistoryTabDetail />;
 
-const SecondRoute = () => (
-  <View style={{ flex: 1, backgroundColor: '#ffffff' }} />
+const chartTab = () => <HistoryTabDetail />;
+
+const renderTabBar = props => (
+  <TabBar
+    {...props}
+    indicatorStyle={styles.tabIndicatorColor}
+    style={styles.tabBackgroundColor}
+  />
 );
 
 const History = props => {
   const { index, setIndex, routes } = useHistoryTab();
 
   const renderScene = SceneMap({
-    first: FirstRoute,
-    second: SecondRoute
+    first: detailTab,
+    second: chartTab
   });
 
   return (
     <TabView
+      renderTabBar={renderTabBar}
       navigationState={{ index, routes }}
       renderScene={renderScene}
       onIndexChange={setIndex}
