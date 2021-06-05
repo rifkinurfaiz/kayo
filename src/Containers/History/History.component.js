@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, useWindowDimensions} from 'react-native';
+import {View} from 'react-native';
 import {TabView, SceneMap} from 'react-native-tab-view';
 
 const FirstRoute = () => <View style={{flex: 1, backgroundColor: '#ff4081'}} />;
@@ -9,8 +9,6 @@ const SecondRoute = () => (
 );
 
 const History = props => {
-  const layout = useWindowDimensions();
-
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     {key: 'first', title: 'First'},
