@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import { HistoryContainer } from '../Containers';
+import { HistoryTabContainer } from '../Containers';
 
 class Wealth extends React.Component {
   render() {
-    return <HistoryContainer />;
+    return <HistoryTabContainer />;
   }
 }
 

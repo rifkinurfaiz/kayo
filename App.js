@@ -15,8 +15,8 @@ const TabNavigator = createMaterialBottomTabNavigator({
         <View>
           <Icon style={[{ color: tintColor }]} size={25} name={'md-infinite'} />
         </View>
-      ),
-    },
+      )
+    }
   },
   History: {
     screen: HistoryMenu,
@@ -26,8 +26,8 @@ const TabNavigator = createMaterialBottomTabNavigator({
         <View>
           <Icon style={[{ color: tintColor }]} size={25} name={'analytics'} />
         </View>
-      ),
-    },
+      )
+    }
   },
   Profile: {
     screen: ProfileMenu,
@@ -41,9 +41,9 @@ const TabNavigator = createMaterialBottomTabNavigator({
             name={'person-circle'}
           />
         </View>
-      ),
-    },
-  },
+      )
+    }
+  }
 });
 
 export default createAppContainer(TabNavigator);

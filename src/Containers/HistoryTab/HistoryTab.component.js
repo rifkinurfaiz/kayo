@@ -2,6 +2,8 @@ import * as React from 'react';
 import { View } from 'react-native';
 import { TabView, SceneMap } from 'react-native-tab-view';
 
+import useHistoryTab from './useHistoryTab';
+
 const FirstRoute = () => (
   <View style={{ flex: 1, backgroundColor: '#ff4081' }} />
 );
@@ -11,15 +13,11 @@ const SecondRoute = () => (
 );
 
 const History = props => {
-  const [index, setIndex] = React.useState(0);
-  const [routes] = React.useState([
-    { key: 'first', title: 'First' },
-    { key: 'second', title: 'Second' },
-  ]);
+  const { index, setIndex, routes } = useHistoryTab();
 
   const renderScene = SceneMap({
     first: FirstRoute,
-    second: SecondRoute,
+    second: SecondRoute
   });
 
   return (
