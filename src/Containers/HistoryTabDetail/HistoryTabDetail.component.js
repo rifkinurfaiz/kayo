@@ -1,11 +1,22 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import Swiper from 'react-native-swiper';
+
+import HistoryTabDetailContent from '../HistoryTabDetailContent';
 
 export const HistoryTabDetail = props => {
   return (
-    <View>
-      <Text>HistoryTabDetail</Text>
-    </View>
+    <Swiper loop={false} showsPagination={false}>
+      <View>
+        <HistoryTabDetailContent year={2019} />
+      </View>
+      <View>
+        <HistoryTabDetailContent year={2020} />
+      </View>
+      <View>
+        <HistoryTabDetailContent year={2021} />
+      </View>
+    </Swiper>
   );
 };
 
