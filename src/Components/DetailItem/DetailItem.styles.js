@@ -6,15 +6,8 @@ const { width } = Dimensions.get('window');
 export default {
   container: {
     borderRadius: 5,
-    paddingBottom: 5,
     width: width / 2 - 20,
-    backgroundColor: '#FFFFFF',
-    borderBottomWidth: 0,
-    shadowColor: '#00000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 1,
-    shadowRadius: 5,
-    elevation: 5
+    backgroundColor: '#FFFFFF'
   },
   title: {
     padding: 7,
@@ -48,5 +41,16 @@ export default {
     backgroundColor: color,
     marginVertical: 5,
     marginRight: 5
-  }))
+  })),
+  totalAmountContainer: {
+    marginTop: 5,
+    paddingVertical: 5,
+    borderTopWidth: 1,
+    borderTopColor: '#e1e1e1',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  totalAmountText: {
+    fontWeight: 'bold'
+  }
 };

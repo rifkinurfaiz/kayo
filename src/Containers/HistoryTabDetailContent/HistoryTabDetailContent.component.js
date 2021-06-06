@@ -5,8 +5,8 @@ import styles from './HistoryTabDetailContent.styles';
 import DetailItem from '../../Components/DetailItem';
 
 const _renderHistoryTabDetailContent = items =>
-  items.map(item => {
-    return <DetailItem {...item} />;
+  items.map((item, i) => {
+    return <DetailItem key={i} {...item} />;
   });
 
 export const HistoryTabDetailContent = props => {
