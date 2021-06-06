@@ -125,7 +125,7 @@ const _renderHistoryTabDetailContent = items =>
   items.map((item, i) => {
     return (
       <View>
-        <HistoryTabDetailContent key={i} item={item} />
+        <HistoryTabDetailContent key={i} {...item} />
       </View>
     );
   });

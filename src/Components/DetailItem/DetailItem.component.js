@@ -6,7 +6,7 @@ import config from '../../Config';
 
 const _dot = id => <View style={styles.dot(config.color[id])} />;
 
-const _mapAccounts = ({ accounts }) =>
+const _mapAccounts = accounts =>
   accounts.map(account => {
     return (
       <View style={styles.accounts}>
@@ -22,8 +22,8 @@ export const DetailItem = props => (
     <View style={styles.title}>
       <Text style={styles.textTitle}>{props.month}</Text>
     </View>
-    <View style={styles.accountsContainer}>{_mapAccounts(props.data)}</View>
-    <View>{props.totalAmount}</View>
+    <View style={styles.accountsContainer}>{_mapAccounts(props.accounts)}</View>
+    <Text>{props.totalAmount}</Text>
   </View>
 );
 

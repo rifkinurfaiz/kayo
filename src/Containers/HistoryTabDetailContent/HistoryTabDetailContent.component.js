@@ -4,31 +4,10 @@ import { View, Text, ScrollView } from 'react-native';
 import styles from './HistoryTabDetailContent.styles';
 import DetailItem from '../../Components/DetailItem';
 
-const data = {
-  accounts: [
-    {
-      id: 'jenius',
-      name: 'Jenius',
-      amount: 'Rp10.000.000'
-    },
-    {
-      id: 'bca',
-      name: 'BCA',
-      amount: 'Rp10.200.140.234'
-    },
-    {
-      id: 'ovo',
-      name: 'OVO',
-      amount: 'Rp2.040.000'
-    },
-    {
-      id: 'gopay',
-      name: 'Gopay',
-      amount: 'Rp1.000'
-    }
-  ],
-  totalAmount: 'Rp212.181.234'
-};
+const _renderHistoryTabDetailContent = items =>
+  items.map(item => {
+    return <DetailItem {...item} />;
+  });
 
 export const HistoryTabDetailContent = props => {
   return (
@@ -38,8 +17,7 @@ export const HistoryTabDetailContent = props => {
       </View>
       <ScrollView>
         <View style={styles.detailItemContainer}>
-          <DetailItem month="January" data={data} />
-          <DetailItem month="February" data={data} />
+          {_renderHistoryTabDetailContent(props.data)}
         </View>
       </ScrollView>
     </View>
