@@ -14,7 +14,7 @@ const renderIcon = (color, icon) => (
 );
 
 const defaultOptions = {
-  barStyle: { backgroundColor: '#388E3C' }
+  barStyle: { backgroundColor: '#1e90ff' }
 };
 
 const TabNavigator = createMaterialBottomTabNavigator({

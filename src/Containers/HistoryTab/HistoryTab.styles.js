@@ -1,4 +1,4 @@
 export default {
-  tabBackgroundColor: { backgroundColor: '#388E3C' },
+  tabBackgroundColor: { backgroundColor: '#1e90ff' },
   tabIndicatorColor: { backgroundColor: '#FFFFFF' }
 };

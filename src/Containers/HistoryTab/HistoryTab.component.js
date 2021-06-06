@@ -33,6 +33,7 @@ const History = props => {
       renderScene={renderScene}
       onIndexChange={setIndex}
       swipeEnabled={atFirstTab}
+      style={{ backgroundColor: '#E1E1E1' }}
     />
   );
 };
