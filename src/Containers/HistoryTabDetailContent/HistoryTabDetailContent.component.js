@@ -13,9 +13,9 @@ export const HistoryTabDetailContent = props => {
   return (
     <View>
       <View style={styles.yearContainer}>
-        <Text>{props.year}</Text>
+        <Text style={styles.yearText}>{props.year}</Text>
       </View>
-      <ScrollView>
+      <ScrollView style={styles.scrollView}>
         <View style={styles.detailItemContainer}>
           {_renderHistoryTabDetailContent(props.data)}
         </View>

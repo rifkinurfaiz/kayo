@@ -1,11 +1,20 @@
 export default {
   detailItemContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly'
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    paddingHorizontal: 13
   },
   yearContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginVertical: 20
+    marginVertical: 13
+  },
+  yearText: {
+    fontWeight: 'bold',
+    fontSize: 17
+  },
+  scrollView: {
+    marginBottom: 100
   }
 };

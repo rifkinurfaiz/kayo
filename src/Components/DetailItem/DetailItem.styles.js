@@ -7,7 +7,8 @@ export default {
   container: {
     borderRadius: 5,
     width: width / 2 - 20,
-    backgroundColor: '#FFFFFF'
+    backgroundColor: '#FFFFFF',
+    marginBottom: 15
   },
   title: {
     padding: 7,
@@ -17,7 +18,8 @@ export default {
     backgroundColor: '#1e90ff'
   },
   textTitle: {
-    color: '#FFFFFF'
+    color: '#FFFFFF',
+    fontWeight: 'bold'
   },
   accounts: {
     padding: 6,
