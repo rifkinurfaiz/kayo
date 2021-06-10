@@ -9,19 +9,17 @@ const _renderHistoryTabDetailContent = items =>
     return <DetailItem key={i} {...item} />;
   });
 
-export const HistoryTabDetailContent = props => {
-  return (
-    <View>
-      <View style={styles.yearContainer}>
-        <Text style={styles.yearText}>{props.year}</Text>
-      </View>
-      <ScrollView style={styles.scrollView}>
-        <View style={styles.detailItemContainer}>
-          {_renderHistoryTabDetailContent(props.data)}
-        </View>
-      </ScrollView>
+export const HistoryTabDetailContent = props => (
+  <View>
+    <View style={styles.yearContainer}>
+      <Text style={styles.yearText}>{props.year}</Text>
     </View>
-  );
-};
+    <ScrollView style={styles.scrollView}>
+      <View style={styles.detailItemContainer}>
+        {_renderHistoryTabDetailContent(props.data)}
+      </View>
+    </ScrollView>
+  </View>
+);
 
 export default HistoryTabDetailContent;
