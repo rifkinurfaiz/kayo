@@ -3,7 +3,7 @@ import * as React from 'react';
 import HistoryTabDetailContentComponent from './HistoryTabDetailContent.component';
 
 export const HistoryTabDetailContentContainer = props => (
-  <HistoryTabDetailContentComponent />
+  <HistoryTabDetailContentComponent props />
 );
 
 export default HistoryTabDetailContentComponent;

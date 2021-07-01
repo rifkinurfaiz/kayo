@@ -1,6 +1,7 @@
 module.exports = {
   root: true,
   extends: '@react-native-community',
+  ignorePatterns: ['/coverage/'],
   rules: {
     'comma-dangle': ['error', 'never'],
     indent: ['error', 2],
