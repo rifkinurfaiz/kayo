@@ -18,11 +18,10 @@ exports[`#HistoryTabComponent should render correctly 1`] = `
     }
   }
   onIndexChange={[MockFunction]}
-  renderScene={[Function]}
   renderTabBar={[Function]}
   style={
     Object {
-      "backgroundColor": "#E1E1E1",
+      "backgroundColor": "#e1e1e1",
     }
   }
   swipeEnabled={true}

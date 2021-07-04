@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Text, View } from 'react-native';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 
 import useHistoryTab from './useHistoryTab';
@@ -13,8 +14,13 @@ const chartTab = () => <HistoryTabChart />;
 const renderTabBar = props => (
   <TabBar
     {...props}
-    indicatorStyle={styles.tabIndicatorColor}
-    style={styles.tabBackgroundColor}
+    indicatorStyle={styles.tabIndicator}
+    style={styles.tab}
+    renderLabel={({ route, focused }) => (
+      <View style={styles.tabLabelWrapper}>
+        <Text style={styles.tabLabel(focused)}>{route.title}</Text>
+      </View>
+    )}
   />
 );
 
@@ -33,7 +39,7 @@ const History = props => {
       renderScene={renderScene}
       onIndexChange={setIndex}
       swipeEnabled={atFirstTab}
-      style={{ backgroundColor: '#E1E1E1' }}
+      style={styles.tabView}
     />
   );
 };

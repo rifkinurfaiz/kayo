@@ -1,13 +1,16 @@
 import { Dimensions } from 'react-native';
 import memoize from 'fast-memoize';
 
+import colors from '../../Assets/Colors';
+
 const { width } = Dimensions.get('window');
+const { primary } = colors;
 
 export default {
   container: {
     borderRadius: 5,
     width: width / 2 - 20,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: primary.white,
     marginBottom: 15
   },
   title: {
@@ -15,10 +18,10 @@ export default {
     alignItems: 'center',
     borderTopRightRadius: 5,
     borderTopLeftRadius: 5,
-    backgroundColor: '#1e90ff'
+    backgroundColor: primary.blue
   },
   textTitle: {
-    color: '#FFFFFF',
+    color: primary.white,
     fontWeight: 'bold'
   },
   accounts: {
@@ -48,7 +51,7 @@ export default {
     marginTop: 5,
     paddingVertical: 5,
     borderTopWidth: 1,
-    borderTopColor: '#e1e1e1',
+    borderTopColor: primary.grey,
     justifyContent: 'center',
     alignItems: 'center'
   },

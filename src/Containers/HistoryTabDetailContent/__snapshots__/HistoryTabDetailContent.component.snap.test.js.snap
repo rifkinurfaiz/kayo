@@ -20,7 +20,7 @@ exports[`HistoryTabDetailContentComponent should render correctly 1`] = `
       }
     />
   </View>
-  <ScrollView
+  <ScrollViewMock
     style={
       Object {
         "marginBottom": 100,
@@ -72,6 +72,6 @@ exports[`HistoryTabDetailContentComponent should render correctly 1`] = `
         year={2020}
       />
     </View>
-  </ScrollView>
+  </ScrollViewMock>
 </View>
 `;

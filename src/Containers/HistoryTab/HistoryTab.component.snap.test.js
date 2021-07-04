@@ -8,6 +8,11 @@ jest
     ...jest.requireActual('react'),
     useState: jest.fn()
   }))
+  .mock('react-native-tab-view', () => ({
+    SceneMap: jest.fn(),
+    TabView: 'TabView',
+    TabBar: 'TabBar'
+  }))
   .mock('react-native-swiper', () => 'Swiper')
   .mock('./useHistoryTab', () =>
     jest.fn().mockReturnValue({

@@ -4,7 +4,7 @@ exports[`#DetailItemComponent render with font size of amount is 12 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#FFFFFF",
+      "backgroundColor": "#ffffff",
       "borderRadius": 5,
       "marginBottom": 15,
       "width": 355,
@@ -25,7 +25,7 @@ exports[`#DetailItemComponent render with font size of amount is 12 1`] = `
     <Text
       style={
         Object {
-          "color": "#FFFFFF",
+          "color": "#ffffff",
           "fontWeight": "bold",
         }
       }
@@ -110,7 +110,7 @@ exports[`#DetailItemComponent render with font size of amount is 14 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#FFFFFF",
+      "backgroundColor": "#ffffff",
       "borderRadius": 5,
       "marginBottom": 15,
       "width": 355,
@@ -131,7 +131,7 @@ exports[`#DetailItemComponent render with font size of amount is 14 1`] = `
     <Text
       style={
         Object {
-          "color": "#FFFFFF",
+          "color": "#ffffff",
           "fontWeight": "bold",
         }
       }
