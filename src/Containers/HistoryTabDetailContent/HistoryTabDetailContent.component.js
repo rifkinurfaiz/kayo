@@ -1,27 +1,28 @@
+// @flow
 import React, { useRef, useState } from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 
 import styles from './HistoryTabDetailContent.styles';
 import { DetailItem, BottomSheet } from '../../Components/';
+import type { Props } from './HistoryTabDetailContent.types';
 
-const _openBottomSheet = (bottomSheetRef, setItem, item) => () => {
-  setItem(item);
-  bottomSheetRef.current.open();
-};
-
-const _renderHistoryTabDetailContent = (items, bottomSheetRef, setItem) =>
-  items.map((item, i) => {
+const _renderHistoryTabDetailContent = (
+  props: Props,
+  bottomSheetRef: Object,
+  setItem: Function
+): React.Node =>
+  props.data.map((item, i) => {
     return (
       <View>
         <TouchableOpacity
-          onPress={_openBottomSheet(bottomSheetRef, setItem, item)}>
+          onPress={props.openBottomSheet(bottomSheetRef, setItem, item)}>
           <DetailItem key={i} {...item} />
         </TouchableOpacity>
       </View>
     );
   });
 
-export const HistoryTabDetailContent = props => {
+export const HistoryTabDetailContent = (props: Props): React.Node => {
   const bottomSheetRef = useRef(null);
   const [item, setItem] = useState({});
 
@@ -33,7 +34,7 @@ export const HistoryTabDetailContent = props => {
       </View>
       <ScrollView style={styles.scrollView}>
         <View style={styles.detailItemContainer}>
-          {_renderHistoryTabDetailContent(props.data, bottomSheetRef, setItem)}
+          {_renderHistoryTabDetailContent(props, bottomSheetRef, setItem)}
         </View>
       </ScrollView>
     </View>

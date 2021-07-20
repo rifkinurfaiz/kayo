@@ -10,13 +10,15 @@
     "test": "jest --verbose --coverage",
     "test:update": "jest --verbose --coverage --updateSnapshot",
     "test:watch": "jest --verbose --watch",
-    "coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html"
+    "coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html",
+    "flow": "flow"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/native": "5.9.4",
     "@react-navigation/stack": "5.14.5",
     "fast-memoize": "2.3.2",
+    "flow-bin": "^0.155.1",
     "react": "16.11.0",
     "react-native": "0.62.0",
     "react-native-gesture-handler": "1.10.3",
@@ -32,7 +34,7 @@
     "react-native-vector-icons": "8.1.0",
     "react-navigation": "4.4.4",
     "react-navigation-material-bottom-tabs": "2.3.4",
-    "recompose": "0.24.0"
+    "recompose": "^0.30.0"
   },
   "devDependencies": {
     "@babel/core": "7.14.0",
