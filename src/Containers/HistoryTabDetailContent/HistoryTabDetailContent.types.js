@@ -1,4 +1,6 @@
+// @flow
 export type Props = {|
   year: number,
-  data: Object
+  data: Object,
+  openBottomSheet: Function
 |};
