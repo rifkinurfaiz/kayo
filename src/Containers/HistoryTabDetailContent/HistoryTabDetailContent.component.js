@@ -1,11 +1,12 @@
 // @flow
-import React, { useRef, useState } from 'react';
+import * as React from 'react';
 import type { Node } from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 
 import styles from './HistoryTabDetailContent.styles';
 import { DetailItem, BottomSheet } from '../../Components/';
 import type { Props } from './HistoryTabDetailContent.types';
+import useHistoryTabDetailContent from './useHistoryTabDetailContent';
 
 const _renderHistoryTabDetailContent = (
   props: Props,
@@ -22,8 +23,7 @@ const _renderHistoryTabDetailContent = (
   ));
 
 export const HistoryTabDetailContent = (props: Props): Node => {
-  const bottomSheetRef = useRef(null);
-  const [item, setItem] = useState({});
+  const { bottomSheetRef, item, setItem } = useHistoryTabDetailContent();
 
   return (
     <View>

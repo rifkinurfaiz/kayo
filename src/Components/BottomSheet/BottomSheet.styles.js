@@ -6,14 +6,16 @@ export default {
   container: {
     borderRadius: 10,
     opacity: 1,
-    padding: 30
+    padding: 30,
+    paddingBottom: 60
   },
   draggableIcon: {
     backgroundColor: '#000'
   },
   month: {
     fontSize: 24,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginBottom: 10
   },
   accountList: {
     marginVertical: 10,
@@ -24,12 +26,11 @@ export default {
     fontSize: 18,
     fontWeight: 'bold',
     marginLeft: 'auto',
-    paddingTop: 20
+    paddingVertical: 20
   },
   accountName: {
     marginLeft: 20,
     color: colors.primary.black,
-    width: 55,
     fontSize: 17
   },
   amountContainer: {
@@ -37,7 +38,8 @@ export default {
   },
   amount: {
     color: colors.primary.black,
-    fontSize: 17
+    fontSize: 17,
+    fontWeight: 'bold'
   },
   type: {
     color: colors.primary.grey,
@@ -50,8 +52,5 @@ export default {
     backgroundColor: color,
     marginVertical: 5,
     marginRight: 5
-  })),
-  scrollView: {
-    marginTop: 20
-  }
+  }))
 };

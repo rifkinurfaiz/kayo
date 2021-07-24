@@ -33,11 +33,11 @@ export default {
     paddingHorizontal: 5
   },
   accountName: {
-    width: 55,
     fontSize: 13
   },
   amount: memoize(amount => ({
-    fontSize: amount.length > 15 ? 12 : 14
+    fontSize: amount.length > 15 ? 12 : 14,
+    marginLeft: 'auto'
   })),
   dot: memoize(color => ({
     width: 10,

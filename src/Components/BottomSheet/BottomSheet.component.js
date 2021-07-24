@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, SafeAreaView, Dimensions, ScrollView, Text } from 'react-native';
+import { View, TouchableWithoutFeedback, Dimensions, ScrollView, Text } from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
 
 import styles from './BottomSheet.styles';
@@ -26,7 +26,7 @@ const _renderAccountList = (item, i) => (
 const _renderContent = ({ accounts, totalAmount, month }) => (
   <View>
     <Text style={styles.month}>{month}</Text>
-    <SafeAreaView style={styles.scrollView}>
+    <TouchableWithoutFeedback>
       <ScrollView
         showsVerticalScrollIndicator={false}
       >
@@ -35,7 +35,7 @@ const _renderContent = ({ accounts, totalAmount, month }) => (
         ))}
         <Text style={styles.totalAmount}>{totalAmount}</Text>
       </ScrollView>
-    </SafeAreaView>
+    </TouchableWithoutFeedback>
   </View>
 );
 

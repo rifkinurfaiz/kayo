@@ -34,9 +34,21 @@ const data = [
             name: 'Gopay',
             amount: 'Rp1.000',
             type: 'Cash'
+          },
+          {
+            id: 'land',
+            name: 'Land in Palembang',
+            amount: 'Rp1.000.000.000',
+            type: 'Property'
+          },
+          {
+            id: 'land',
+            name: 'Land in Palembang',
+            amount: 'Rp1.000.000.000',
+            type: 'Property'
           }
         ],
-        totalAmount: 'Rp212.181.234'
+        totalAmount: 'Rp1.212.181.234'
       },
       {
         month: 'February',
