@@ -10,7 +10,7 @@ describe('HistoryTabDetailContentComponent', () => {
       data: [
         {
           month: 'January',
-          accounts: [
+          assets: [
             {
               id: 'jenius',
               name: 'Jenius',

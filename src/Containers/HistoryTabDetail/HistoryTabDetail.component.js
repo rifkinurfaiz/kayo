@@ -10,7 +10,7 @@ const data = [
     data: [
       {
         month: 'January',
-        accounts: [
+        assets: [
           {
             id: 'jenius',
             name: 'Jenius',
@@ -52,7 +52,7 @@ const data = [
       },
       {
         month: 'February',
-        accounts: [
+        assets: [
           {
             id: 'jenius',
             name: 'Jenius',
@@ -87,7 +87,7 @@ const data = [
     data: [
       {
         month: 'January',
-        accounts: [
+        assets: [
           {
             id: 'jenius',
             name: 'Jenius',
@@ -117,7 +117,7 @@ const data = [
       },
       {
         month: 'February',
-        accounts: [
+        assets: [
           {
             id: 'jenius',
             name: 'Jenius',
@@ -147,7 +147,7 @@ const data = [
       },
       {
         month: 'March',
-        accounts: [
+        assets: [
           {
             id: 'jenius',
             name: 'Jenius',
@@ -177,7 +177,7 @@ const data = [
       },
       {
         month: 'April',
-        accounts: [
+        assets: [
           {
             id: 'jenius',
             name: 'Jenius',
@@ -207,7 +207,7 @@ const data = [
       },
       {
         month: 'May',
-        accounts: [
+        assets: [
           {
             id: 'jenius',
             name: 'Jenius',

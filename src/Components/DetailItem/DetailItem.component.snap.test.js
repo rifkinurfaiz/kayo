@@ -7,7 +7,7 @@ describe('#DetailItemComponent', () => {
   it('render with font size of amount is 12', () => {
     const props = {
       month: 'January',
-      accounts: [
+      assets: [
         {
           id: 'jenius',
           name: 'Jenius',
@@ -22,7 +22,7 @@ describe('#DetailItemComponent', () => {
   it('render with font size of amount is 14', () => {
     const props = {
       month: 'January',
-      accounts: [
+      assets: [
         {
           id: 'jenius',
           name: 'Jenius',

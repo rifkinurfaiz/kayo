@@ -41,7 +41,7 @@ exports[`HistoryTabDetailContentComponent should render correctly 1`] = `
         data={
           Array [
             Object {
-              "accounts": Array [
+              "assets": Array [
                 Object {
                   "amount": "Rp10.000.000",
                   "id": "jenius",

@@ -12,10 +12,10 @@ const Screen = {
 
 const _renderIcon = id => <View style={styles.icon(config.color[id])} />;
 
-const _renderAccountList = (item, i) => (
-  <View style={styles.accountList} key={i}>
+const _renderAssetList = (item, i) => (
+  <View style={styles.assetList} key={i}>
     {_renderIcon(item.id)}
-    <Text style={styles.accountName}>{item.name}</Text>
+    <Text style={styles.assetName}>{item.name}</Text>
     <View style={styles.amountContainer}>
       <Text style={styles.amount}>{item.amount}</Text>
       <Text style={styles.type}>{item.type}</Text>
@@ -23,15 +23,15 @@ const _renderAccountList = (item, i) => (
   </View>
 );
 
-const _renderContent = ({ accounts, totalAmount, month }) => (
+const _renderContent = ({ assets, totalAmount, month }) => (
   <View>
     <Text style={styles.month}>{month}</Text>
     <TouchableWithoutFeedback>
       <ScrollView
         showsVerticalScrollIndicator={false}
       >
-        {accounts && accounts.map((item, i) => (
-          _renderAccountList(item, i)
+        {assets && assets.map((item, i) => (
+          _renderAssetList(item, i)
         ))}
         <Text style={styles.totalAmount}>{totalAmount}</Text>
       </ScrollView>

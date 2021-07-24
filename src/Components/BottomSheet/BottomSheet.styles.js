@@ -17,7 +17,7 @@ export default {
     fontWeight: 'bold',
     marginBottom: 10
   },
-  accountList: {
+  assetList: {
     marginVertical: 10,
     flexDirection: 'row',
     justifyContent: 'flex-start'
@@ -28,7 +28,7 @@ export default {
     marginLeft: 'auto',
     paddingVertical: 20
   },
-  accountName: {
+  assetName: {
     marginLeft: 20,
     color: colors.primary.black,
     fontSize: 17

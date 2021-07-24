@@ -24,15 +24,15 @@ export default {
     color: primary.white,
     fontWeight: 'bold'
   },
-  accounts: {
+  assetContainer: {
     padding: 6,
     flexDirection: 'row',
     justifyContent: 'flex-start'
   },
-  accountsContainer: {
+  assetsContainer: {
     paddingHorizontal: 5
   },
-  accountName: {
+  assetName: {
     fontSize: 13
   },
   amount: memoize(amount => ({
@@ -49,7 +49,7 @@ export default {
   })),
   totalAmountContainer: {
     marginTop: 5,
-    paddingVertical: 5,
+    paddingVertical: 10,
     borderTopWidth: 1,
     borderTopColor: secondary.grey,
     justifyContent: 'center',

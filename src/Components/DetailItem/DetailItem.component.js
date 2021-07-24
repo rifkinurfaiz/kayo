@@ -7,18 +7,18 @@ import config from '../../Config';
 const _renderDot = id => <View style={styles.dot(config.color[id])} />;
 
 /**
- * Display first 4 of accounts
+ * Display first 4 of assets
  *
- * @param {Array} accounts - array of bank accounts
- * @returns {React.Node} Mapped account list component
+ * @param {Array} assets - array of assets
+ * @returns {React.Node} Mapped asset list component
  */
-const _mapAccounts = accounts =>
-  accounts.slice(0, 4).map((account, i) => {
+const _mapAssets = assets =>
+  assets.slice(0, 4).map((asset, i) => {
     return (
-      <View style={styles.accounts} key={i}>
-        {_renderDot(account.id)}
-        <Text style={styles.accountName}>{account.name}</Text>
-        <Text style={styles.amount(account.amount)}>{account.amount}</Text>
+      <View style={styles.assetContainer} key={i}>
+        {_renderDot(asset.id)}
+        <Text style={styles.assetName}>{asset.name}</Text>
+        <Text style={styles.amount(asset.amount)}>{asset.amount}</Text>
       </View>
     );
   });
@@ -34,7 +34,7 @@ export const DetailItem = props => (
     <View style={styles.title}>
       <Text style={styles.textTitle}>{props.month}</Text>
     </View>
-    <View style={styles.accountsContainer}>{_mapAccounts(props.accounts)}</View>
+    <View style={styles.assetsContainer}>{_mapAssets(props.assets)}</View>
     <View style={styles.totalAmountContainer}>
       <Text style={styles.totalAmountText}>{props.totalAmount}</Text>
     </View>

@@ -10,7 +10,7 @@ exports[`#HistoryTabDetailComponent should render correctly 1`] = `
       data={
         Array [
           Object {
-            "accounts": Array [
+            "assets": Array [
               Object {
                 "amount": "Rp10.000.000",
                 "id": "jenius",
@@ -36,7 +36,7 @@ exports[`#HistoryTabDetailComponent should render correctly 1`] = `
             "totalAmount": "Rp212.181.234",
           },
           Object {
-            "accounts": Array [
+            "assets": Array [
               Object {
                 "amount": "Rp10.000.000",
                 "id": "jenius",
@@ -72,7 +72,7 @@ exports[`#HistoryTabDetailComponent should render correctly 1`] = `
       data={
         Array [
           Object {
-            "accounts": Array [
+            "assets": Array [
               Object {
                 "amount": "Rp10.000.000",
                 "id": "jenius",
@@ -98,7 +98,7 @@ exports[`#HistoryTabDetailComponent should render correctly 1`] = `
             "totalAmount": "Rp212.181.234",
           },
           Object {
-            "accounts": Array [
+            "assets": Array [
               Object {
                 "amount": "Rp10.000.000",
                 "id": "jenius",
@@ -124,7 +124,7 @@ exports[`#HistoryTabDetailComponent should render correctly 1`] = `
             "totalAmount": "Rp212.181.234",
           },
           Object {
-            "accounts": Array [
+            "assets": Array [
               Object {
                 "amount": "Rp19.000.000",
                 "id": "jenius",
@@ -150,7 +150,7 @@ exports[`#HistoryTabDetailComponent should render correctly 1`] = `
             "totalAmount": "Rp221.181.234",
           },
           Object {
-            "accounts": Array [
+            "assets": Array [
               Object {
                 "amount": "Rp19.000.000",
                 "id": "jenius",
@@ -176,7 +176,7 @@ exports[`#HistoryTabDetailComponent should render correctly 1`] = `
             "totalAmount": "Rp221.181.234",
           },
           Object {
-            "accounts": Array [
+            "assets": Array [
               Object {
                 "amount": "Rp19.000.000",
                 "id": "jenius",
