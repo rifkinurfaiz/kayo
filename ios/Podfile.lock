@@ -298,7 +298,7 @@ PODS:
     - React
   - RNGestureHandler (1.10.3):
     - React-Core
-  - RNI18n (2.0.15):
+  - RNI18n (2.0.12):
     - React
   - RNReanimated (2.2.0):
     - DoubleConversion
@@ -504,7 +504,7 @@ SPEC CHECKSUMS:
   ReactCommon: d22162ab8f1358c53dfcd0f9c4d82d38facdbc48
   RNCMaskedView: 0e1bc4bfa8365eba5fbbb71e07fbdc0555249489
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
-  RNI18n: e2f7e76389fcc6e84f2c8733ea89b92502351fd8
+  RNI18n: ee831694f1eaa69b270d345e4617f70735d4cdb9
   RNReanimated: 72f585d1587d2f2ae69279c28ea8bbd110aec5f3
   RNScreens: 21b73c94c9117e1110a79ee0ee80c93ccefed8ce
   RNVectorIcons: 31cebfcf94e8cf8686eb5303ae0357da64d7a5a4

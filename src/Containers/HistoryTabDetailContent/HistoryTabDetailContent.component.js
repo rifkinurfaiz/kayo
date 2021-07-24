@@ -12,16 +12,14 @@ const _renderHistoryTabDetailContent = (
   bottomSheetRef: Object,
   setItem: Function
 ): Node =>
-  props.data.map((item, i) => {
-    return (
-      <View>
-        <TouchableOpacity
-          onPress={props.openBottomSheet(bottomSheetRef, setItem, item)}>
-          <DetailItem key={i} {...item} />
-        </TouchableOpacity>
-      </View>
-    );
-  });
+  props.data.map((item, i) => (
+    <View>
+      <TouchableOpacity
+        onPress={props.openBottomSheet(bottomSheetRef, setItem, item)}>
+        <DetailItem key={i} {...item} />
+      </TouchableOpacity>
+    </View>
+  ));
 
 export const HistoryTabDetailContent = (props: Props): Node => {
   const bottomSheetRef = useRef(null);

@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 import styles from './DetailItem.styles';
 import config from '../../Config';
 
-const _dot = id => <View style={styles.dot(config.color[id])} />;
+const _renderDot = id => <View style={styles.dot(config.color[id])} />;
 
 /**
  * Display first 4 of accounts
@@ -16,7 +16,7 @@ const _mapAccounts = accounts =>
   accounts.slice(0, 4).map((account, i) => {
     return (
       <View style={styles.accounts} key={i}>
-        {_dot(account.id)}
+        {_renderDot(account.id)}
         <Text style={styles.accountName}>{account.name}</Text>
         <Text style={styles.amount(account.amount)}>{account.amount}</Text>
       </View>

@@ -1,22 +1,50 @@
 import * as React from 'react';
-import { View, Dimensions } from 'react-native';
+import { View, SafeAreaView, Dimensions, ScrollView, Text } from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
 
 import styles from './BottomSheet.styles';
+import config from '../../Config';
 
 const Screen = {
   width: Dimensions.get('window').width,
   height: Dimensions.get('window').height
 };
 
+const _renderIcon = id => <View style={styles.icon(config.color[id])} />;
+
+const _renderAccountList = (item, i) => (
+  <View style={styles.accountList} key={i}>
+    {_renderIcon(item.id)}
+    <Text style={styles.accountName}>{item.name}</Text>
+    <Text style={styles.amount}>{item.amount}</Text>
+  </View>
+);
+
+const _renderContent = ({ accounts, totalAmount, month }) => (
+  <View>
+    <Text style={styles.month}>{month}</Text>
+    <SafeAreaView style={styles.scrollView}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+      >
+        {accounts && accounts.map((item, i) => (
+          _renderAccountList(item, i)
+        ))}
+        <Text style={styles.totalAmount}>{totalAmount}</Text>
+      </ScrollView>
+    </SafeAreaView>
+  </View>
+);
+
 const BottomSheet = React.forwardRef((props, ref) => {
   return (
     <RBSheet
       ref={ref}
+      dragFromTopOnly={true}
       closeOnDragDown={true}
       height={Screen.height / props.height}
       customStyles={styles}>
-      <View />
+      {_renderContent(props.item)}
     </RBSheet>
   );
 });
