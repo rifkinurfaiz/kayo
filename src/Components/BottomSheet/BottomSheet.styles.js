@@ -1,56 +1,62 @@
 import memoize from 'fast-memoize';
 
 import colors from '../../Assets/Colors';
+import { size } from '../../Utils';
+const { scaleWidth, scaleHeight, scaleSize, scaleFont } = size;
 
 export default {
   container: {
     borderRadius: 10,
     opacity: 1,
-    padding: 30,
-    paddingBottom: 60
+    padding: scaleWidth(20),
+    paddingBottom: scaleHeight(60)
   },
   draggableIcon: {
     backgroundColor: '#000'
   },
   month: {
-    fontSize: 24,
+    fontSize: scaleFont(24),
     fontWeight: 'bold',
-    marginBottom: 10
+    marginBottom: scaleHeight(15)
   },
   assetList: {
-    marginVertical: 10,
+    marginTop: scaleHeight(5),
+    marginBottom: scaleHeight(5),
     flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'flex-start'
   },
   totalAmount: {
-    fontSize: 18,
+    fontSize: scaleFont(18),
     fontWeight: 'bold',
     marginLeft: 'auto',
-    paddingVertical: 20
+    paddingTop: scaleHeight(20),
+    paddingBottom: scaleHeight(30)
   },
   assetName: {
-    marginLeft: 20,
+    marginLeft: scaleWidth(10),
+    width: scaleWidth(150),
     color: colors.primary.black,
-    fontSize: 17
-  },
-  amountContainer: {
-    marginLeft: 'auto'
+    fontSize: scaleFont(17)
   },
   amount: {
     color: colors.primary.black,
-    fontSize: 17,
-    fontWeight: 'bold'
+    fontSize: scaleFont(17),
+    fontWeight: 'bold',
+    marginLeft: 'auto'
   },
   type: {
     color: colors.primary.grey,
     marginLeft: 'auto'
   },
   icon: memoize(color => ({
-    width: 17,
-    height: 17,
-    borderRadius: 9,
+    width: scaleSize(25),
+    height: scaleSize(25),
+    borderRadius: 15,
     backgroundColor: color,
-    marginVertical: 5,
-    marginRight: 5
-  }))
+    marginRight: scaleWidth(5)
+  })),
+  assetListContainer: {
+    marginBottom: scaleHeight(10)
+  }
 };

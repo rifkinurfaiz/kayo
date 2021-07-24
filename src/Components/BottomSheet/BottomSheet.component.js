@@ -13,14 +13,15 @@ const Screen = {
 const _renderIcon = id => <View style={styles.icon(config.color[id])} />;
 
 const _renderAssetList = (item, i) => (
-  <View style={styles.assetList} key={i}>
-    {_renderIcon(item.id)}
-    <Text style={styles.assetName}>{item.name}</Text>
-    <View style={styles.amountContainer}>
+  <View style={styles.assetListContainer}>
+    <View style={styles.assetList} key={i}>
+      {_renderIcon(item.id)}
+      <Text style={styles.assetName} numberOfLines={1}>{item.name}</Text>
       <Text style={styles.amount}>{item.amount}</Text>
-      <Text style={styles.type}>{item.type}</Text>
     </View>
+    <Text style={styles.type}>{item.type}</Text>
   </View>
+
 );
 
 const _renderContent = ({ assets, totalAmount, month }) => (

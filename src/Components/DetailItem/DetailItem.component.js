@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 import styles from './DetailItem.styles';
 import config from '../../Config';
 
-const _renderDot = id => <View style={styles.dot(config.color[id])} />;
+const _renderIcon = id => <View style={styles.icon(config.color[id])} />;
 
 /**
  * Display first 4 of assets
@@ -16,9 +16,9 @@ const _mapAssets = assets =>
   assets.slice(0, 4).map((asset, i) => {
     return (
       <View style={styles.assetContainer} key={i}>
-        {_renderDot(asset.id)}
-        <Text style={styles.assetName}>{asset.name}</Text>
-        <Text style={styles.amount(asset.amount)}>{asset.amount}</Text>
+        {_renderIcon(asset.id)}
+        <Text style={styles.assetName} numberOfLines={1}>{asset.name}</Text>
+        <Text style={styles.amount(asset.amount)} numberOfLines={1}>{asset.amount}</Text>
       </View>
     );
   });

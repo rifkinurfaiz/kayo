@@ -13,7 +13,7 @@ const data = [
         assets: [
           {
             id: 'jenius',
-            name: 'Jenius',
+            name: 'Jenius Jenius Jenius Jenius',
             amount: 'Rp10.000.000',
             type: 'Cash'
           },

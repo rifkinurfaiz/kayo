@@ -2,19 +2,32 @@ import { Dimensions } from 'react-native';
 import memoize from 'fast-memoize';
 
 import colors from '../../Assets/Colors';
+import { size, platform } from '../../Utils';
 
 const { width } = Dimensions.get('window');
 const { primary, secondary } = colors;
+const { scaleWidth, scaleHeight, scaleFont } = size;
+
+const getWidth = () => {
+  console.log(platform.getRatio());
+  if (platform.isIOS()) {
+    return scaleWidth((width / 2) - 38);
+  }
+
+  return platform.isAndroidHighRatio()
+    ? scaleWidth((width / 2) - 37)
+    : scaleWidth((width / 2) - 12);
+};
 
 export default {
   container: {
     borderRadius: 5,
-    width: width / 2 - 20,
+    width: getWidth(),
     backgroundColor: primary.white,
-    marginBottom: 15
+    marginBottom: scaleHeight(10)
   },
   title: {
-    padding: 7,
+    padding: scaleWidth(10),
     alignItems: 'center',
     borderTopRightRadius: 5,
     borderTopLeftRadius: 5,
@@ -22,34 +35,38 @@ export default {
   },
   textTitle: {
     color: primary.white,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    fontSize: 16
   },
   assetContainer: {
-    padding: 6,
+    margin: scaleWidth(5),
+    marginVertical: scaleHeight(7),
+    alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'flex-start'
+    justifyContent: 'space-between'
   },
   assetsContainer: {
-    paddingHorizontal: 5
+    padding: scaleWidth(0)
   },
   assetName: {
-    fontSize: 13
+    fontSize: scaleFont(12),
+    width: scaleWidth(55)
   },
   amount: memoize(amount => ({
-    fontSize: amount.length > 15 ? 12 : 14,
-    marginLeft: 'auto'
+    fontSize: scaleFont(12),
+    width: platform.isIOS() ? scaleWidth(80) : scaleWidth(90),
+    textAlign: 'right'
   })),
-  dot: memoize(color => ({
-    width: 10,
-    height: 10,
-    borderRadius: 5,
+  icon: memoize(color => ({
+    width: scaleWidth(10),
+    height: platform.isIOS() ? scaleHeight(8) : scaleHeight(9),
+    borderRadius: scaleWidth(5),
     backgroundColor: color,
-    marginVertical: 5,
-    marginRight: 5
+    marginRight: scaleWidth(5)
   })),
   totalAmountContainer: {
-    marginTop: 5,
-    paddingVertical: 10,
+    marginTop: scaleWidth(5),
+    paddingVertical: scaleWidth(10),
     borderTopWidth: 1,
     borderTopColor: secondary.grey,
     justifyContent: 'center',
