@@ -9,7 +9,6 @@ const { primary, secondary } = colors;
 const { scaleWidth, scaleHeight, scaleFont } = size;
 
 const getWidth = () => {
-  console.log(platform.getRatio());
   if (platform.isIOS()) {
     return scaleWidth((width / 2) - 38);
   }
