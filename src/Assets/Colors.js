@@ -1,7 +1,8 @@
 const bluePrimary = '#1e90ff';
 const whitePrimary = '#ffffff';
-const greyPrimary = '#e1e1e1';
 const blackPrimary = '#1e272e';
+const greyPrimary = '#696969';
+const greySecondary = '#e1e1e1';
 
 export default {
   primary: {
@@ -9,5 +10,8 @@ export default {
     white: whitePrimary,
     grey: greyPrimary,
     black: blackPrimary
+  },
+  secondary: {
+    grey: greySecondary
   }
 };

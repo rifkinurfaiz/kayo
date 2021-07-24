@@ -2,11 +2,11 @@ import memoize from 'fast-memoize';
 
 import colors from '../../Assets/Colors';
 
-const { primary } = colors;
+const { primary, secondary } = colors;
 
 export default {
   tabView: {
-    backgroundColor: primary.grey
+    backgroundColor: secondary.grey
   },
   tab: {
     backgroundColor: primary.white

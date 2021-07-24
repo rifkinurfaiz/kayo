@@ -14,22 +14,26 @@ const data = [
           {
             id: 'jenius',
             name: 'Jenius',
-            amount: 'Rp10.000.000'
+            amount: 'Rp10.000.000',
+            type: 'Cash'
           },
           {
             id: 'bca',
             name: 'BCA',
-            amount: 'Rp10.200.140.234'
+            amount: 'Rp10.200.140.234',
+            type: 'Cash'
           },
           {
             id: 'ovo',
             name: 'OVO',
-            amount: 'Rp2.040.000'
+            amount: 'Rp2.040.000',
+            type: 'Cash'
           },
           {
             id: 'gopay',
             name: 'Gopay',
-            amount: 'Rp1.000'
+            amount: 'Rp1.000',
+            type: 'Cash'
           }
         ],
         totalAmount: 'Rp212.181.234'
@@ -40,22 +44,26 @@ const data = [
           {
             id: 'jenius',
             name: 'Jenius',
-            amount: 'Rp10.000.000'
+            amount: 'Rp10.000.000',
+            type: 'Cash'
           },
           {
             id: 'bca',
             name: 'BCA',
-            amount: 'Rp10.200.140.234'
+            amount: 'Rp10.200.140.234',
+            type: 'Cash'
           },
           {
             id: 'ovo',
             name: 'OVO',
-            amount: 'Rp2.040.000'
+            amount: 'Rp2.040.000',
+            type: 'Cash'
           },
           {
             id: 'gopay',
             name: 'Gopay',
-            amount: 'Rp1.000'
+            amount: 'Rp1.000',
+            type: 'Cash'
           }
         ],
         totalAmount: 'Rp212.181.234'
@@ -71,22 +79,26 @@ const data = [
           {
             id: 'jenius',
             name: 'Jenius',
-            amount: 'Rp10.000.000'
+            amount: 'Rp10.000.000',
+            type: 'Cash'
           },
           {
             id: 'bca',
             name: 'BCA',
-            amount: 'Rp10.200.140.234'
+            amount: 'Rp10.200.140.234',
+            type: 'Cash'
           },
           {
             id: 'ovo',
             name: 'OVO',
-            amount: 'Rp2.040.000'
+            amount: 'Rp2.040.000',
+            type: 'Cash'
           },
           {
             id: 'gopay',
             name: 'Gopay',
-            amount: 'Rp1.000'
+            amount: 'Rp1.000',
+            type: 'Cash'
           }
         ],
         totalAmount: 'Rp212.181.234'
@@ -97,22 +109,26 @@ const data = [
           {
             id: 'jenius',
             name: 'Jenius',
-            amount: 'Rp10.000.000'
+            amount: 'Rp10.000.000',
+            type: 'Cash'
           },
           {
             id: 'bca',
             name: 'BCA',
-            amount: 'Rp10.200.140.234'
+            amount: 'Rp10.200.140.234',
+            type: 'Cash'
           },
           {
             id: 'ovo',
             name: 'OVO',
-            amount: 'Rp2.040.000'
+            amount: 'Rp2.040.000',
+            type: 'Cash'
           },
           {
             id: 'gopay',
             name: 'Gopay',
-            amount: 'Rp1.000'
+            amount: 'Rp1.000',
+            type: 'Cash'
           }
         ],
         totalAmount: 'Rp212.181.234'
@@ -123,22 +139,26 @@ const data = [
           {
             id: 'jenius',
             name: 'Jenius',
-            amount: 'Rp19.000.000'
+            amount: 'Rp10.000.000',
+            type: 'Cash'
           },
           {
             id: 'bca',
             name: 'BCA',
-            amount: 'Rp10.200.140.234'
+            amount: 'Rp10.200.140.234',
+            type: 'Cash'
           },
           {
             id: 'ovo',
             name: 'OVO',
-            amount: 'Rp2.040.000'
+            amount: 'Rp2.040.000',
+            type: 'Cash'
           },
           {
             id: 'gopay',
             name: 'Gopay',
-            amount: 'Rp1.000'
+            amount: 'Rp1.000',
+            type: 'Cash'
           }
         ],
         totalAmount: 'Rp221.181.234'
@@ -149,22 +169,26 @@ const data = [
           {
             id: 'jenius',
             name: 'Jenius',
-            amount: 'Rp19.000.000'
+            amount: 'Rp10.000.000',
+            type: 'Cash'
           },
           {
             id: 'bca',
             name: 'BCA',
-            amount: 'Rp10.200.140.234'
+            amount: 'Rp10.200.140.234',
+            type: 'Cash'
           },
           {
             id: 'ovo',
             name: 'OVO',
-            amount: 'Rp2.040.000'
+            amount: 'Rp2.040.000',
+            type: 'Cash'
           },
           {
             id: 'gopay',
             name: 'Gopay',
-            amount: 'Rp1.000'
+            amount: 'Rp1.000',
+            type: 'Cash'
           }
         ],
         totalAmount: 'Rp221.181.234'
@@ -175,22 +199,26 @@ const data = [
           {
             id: 'jenius',
             name: 'Jenius',
-            amount: 'Rp19.000.000'
+            amount: 'Rp10.000.000',
+            type: 'Cash'
           },
           {
             id: 'bca',
             name: 'BCA',
-            amount: 'Rp10.200.140.234'
+            amount: 'Rp10.200.140.234',
+            type: 'Cash'
           },
           {
             id: 'ovo',
             name: 'OVO',
-            amount: 'Rp2.040.000'
+            amount: 'Rp2.040.000',
+            type: 'Cash'
           },
           {
             id: 'gopay',
             name: 'Gopay',
-            amount: 'Rp1.000'
+            amount: 'Rp1.000',
+            type: 'Cash'
           }
         ],
         totalAmount: 'Rp221.181.234'

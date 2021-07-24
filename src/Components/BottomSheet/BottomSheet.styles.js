@@ -16,35 +16,42 @@ export default {
     fontWeight: 'bold'
   },
   accountList: {
-    marginVertical: 5,
+    marginVertical: 10,
     flexDirection: 'row',
     justifyContent: 'flex-start'
   },
   totalAmount: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginLeft: 'auto'
+    marginLeft: 'auto',
+    paddingTop: 20
   },
   accountName: {
     marginLeft: 20,
-    color: colors.blackPrimary,
+    color: colors.primary.black,
     width: 55,
-    fontSize: 16
+    fontSize: 17
+  },
+  amountContainer: {
+    marginLeft: 'auto'
   },
   amount: {
-    color: colors.blackPrimary,
-    marginLeft: 'auto',
-    fontSize: 16
+    color: colors.primary.black,
+    fontSize: 17
+  },
+  type: {
+    color: colors.primary.grey,
+    marginLeft: 'auto'
   },
   icon: memoize(color => ({
-    width: 15,
-    height: 15,
-    borderRadius: 8,
+    width: 17,
+    height: 17,
+    borderRadius: 9,
     backgroundColor: color,
     marginVertical: 5,
     marginRight: 5
   })),
   scrollView: {
-    marginVertical: 15
+    marginTop: 20
   }
 };

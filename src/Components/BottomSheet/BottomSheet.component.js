@@ -16,7 +16,10 @@ const _renderAccountList = (item, i) => (
   <View style={styles.accountList} key={i}>
     {_renderIcon(item.id)}
     <Text style={styles.accountName}>{item.name}</Text>
-    <Text style={styles.amount}>{item.amount}</Text>
+    <View style={styles.amountContainer}>
+      <Text style={styles.amount}>{item.amount}</Text>
+      <Text style={styles.type}>{item.type}</Text>
+    </View>
   </View>
 );
 

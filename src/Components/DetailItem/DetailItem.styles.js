@@ -4,7 +4,7 @@ import memoize from 'fast-memoize';
 import colors from '../../Assets/Colors';
 
 const { width } = Dimensions.get('window');
-const { primary } = colors;
+const { primary, secondary } = colors;
 
 export default {
   container: {
@@ -51,7 +51,7 @@ export default {
     marginTop: 5,
     paddingVertical: 5,
     borderTopWidth: 1,
-    borderTopColor: primary.grey,
+    borderTopColor: secondary.grey,
     justifyContent: 'center',
     alignItems: 'center'
   },
