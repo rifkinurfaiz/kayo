@@ -21,7 +21,7 @@ export default {
   },
   assetList: {
     marginTop: scaleHeight(5),
-    marginBottom: scaleHeight(5),
+    marginBottom: scaleHeight(2),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start'

@@ -48,11 +48,11 @@ export default {
     padding: scaleWidth(0)
   },
   assetName: {
-    fontSize: scaleFont(12),
+    fontSize: scaleFont(13),
     width: scaleWidth(55)
   },
   amount: memoize(amount => ({
-    fontSize: scaleFont(12),
+    fontSize: scaleFont(13),
     width: platform.isIOS() ? scaleWidth(80) : scaleWidth(90),
     textAlign: 'right'
   })),

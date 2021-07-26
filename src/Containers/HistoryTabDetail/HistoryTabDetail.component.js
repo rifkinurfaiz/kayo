@@ -13,7 +13,7 @@ const data = [
         assets: [
           {
             id: 'jenius',
-            name: 'Jenius Jenius Jenius Jenius',
+            name: 'Deposito Jenius Maxi Saver dan Flexi Saver',
             amount: 'Rp10.000.000',
             type: 'Cash'
           },

@@ -16,7 +16,7 @@ const _renderAssetList = (item, i) => (
   <View style={styles.assetListContainer}>
     <View style={styles.assetList} key={i}>
       {_renderIcon(item.id)}
-      <Text style={styles.assetName} numberOfLines={1}>{item.name}</Text>
+      <Text style={styles.assetName} numberOfLines={2}>{item.name}</Text>
       <Text style={styles.amount}>{item.amount}</Text>
     </View>
     <Text style={styles.type}>{item.type}</Text>
