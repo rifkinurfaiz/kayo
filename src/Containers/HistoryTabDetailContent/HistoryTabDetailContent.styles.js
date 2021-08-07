@@ -1,20 +1,23 @@
+import { size } from '../../Utils';
+const { scaleWidth, scaleHeight, scaleFont } = size;
+
 export default {
   detailItemContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    paddingHorizontal: 13
+    paddingHorizontal: scaleWidth(10)
   },
   yearContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginVertical: 13
+    paddingVertical: scaleHeight(10)
   },
   yearText: {
     fontWeight: 'bold',
-    fontSize: 17
+    fontSize: scaleFont(17)
   },
   scrollView: {
-    marginBottom: 100
+    marginBottom: scaleHeight(70)
   }
 };

@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import Swiper from 'react-native-swiper';
 
 import HistoryTabDetailContent from '../HistoryTabDetailContent';
 import useHistoryTabDetail from './useHistoryTabDetail';
+import Loading from './HistoryTabDetailLoading.component';
 
 const _renderHistoryTabDetailContent = items =>
   items.map((item, i) => {
@@ -15,7 +16,7 @@ const _renderHistoryTabDetailContent = items =>
   });
 
 const _renderLoading = () => (
-  <View><Text>Loading...</Text></View>
+  <Loading />
 );
 
 export const HistoryTabDetail = props => {
