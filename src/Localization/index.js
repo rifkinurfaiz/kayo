@@ -5,7 +5,9 @@ import id from './id-ID.js';
 
 I18n.translations = {
   'en-US': en,
-  'id-ID': id
+  'id-ID': id,
+  en,
+  id
 };
 
 export default I18n;

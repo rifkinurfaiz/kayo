@@ -1,4 +1,6 @@
+// @flow
 import * as React from 'react';
+import { Text, View } from 'react-native';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 
 import useHistoryTab from './useHistoryTab';
@@ -10,15 +12,20 @@ const detailTab = () => <HistoryTabDetail />;
 
 const chartTab = () => <HistoryTabChart />;
 
-const renderTabBar = props => (
+const renderTabBar = (props: Object): React.Node => (
   <TabBar
     {...props}
-    indicatorStyle={styles.tabIndicatorColor}
-    style={styles.tabBackgroundColor}
+    indicatorStyle={styles.tabIndicator}
+    style={styles.tab}
+    renderLabel={({ route, focused }) => (
+      <View style={styles.tabLabelWrapper}>
+        <Text style={styles.tabLabel(focused)}>{route.title}</Text>
+      </View>
+    )}
   />
 );
 
-const History = props => {
+const History = (props: Object): React.Node => {
   const { index, setIndex, routes } = useHistoryTab();
   const atFirstTab = index === 0 ? true : false;
   const renderScene = SceneMap({
@@ -33,7 +40,7 @@ const History = props => {
       renderScene={renderScene}
       onIndexChange={setIndex}
       swipeEnabled={atFirstTab}
-      style={{ backgroundColor: '#E1E1E1' }}
+      style={styles.tabView}
     />
   );
 };

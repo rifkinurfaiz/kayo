@@ -3,201 +3,8 @@ import { View } from 'react-native';
 import Swiper from 'react-native-swiper';
 
 import HistoryTabDetailContent from '../HistoryTabDetailContent';
-
-const data = [
-  {
-    year: 2020,
-    data: [
-      {
-        month: 'January',
-        accounts: [
-          {
-            id: 'jenius',
-            name: 'Jenius',
-            amount: 'Rp10.000.000'
-          },
-          {
-            id: 'bca',
-            name: 'BCA',
-            amount: 'Rp10.200.140.234'
-          },
-          {
-            id: 'ovo',
-            name: 'OVO',
-            amount: 'Rp2.040.000'
-          },
-          {
-            id: 'gopay',
-            name: 'Gopay',
-            amount: 'Rp1.000'
-          }
-        ],
-        totalAmount: 'Rp212.181.234'
-      },
-      {
-        month: 'February',
-        accounts: [
-          {
-            id: 'jenius',
-            name: 'Jenius',
-            amount: 'Rp10.000.000'
-          },
-          {
-            id: 'bca',
-            name: 'BCA',
-            amount: 'Rp10.200.140.234'
-          },
-          {
-            id: 'ovo',
-            name: 'OVO',
-            amount: 'Rp2.040.000'
-          },
-          {
-            id: 'gopay',
-            name: 'Gopay',
-            amount: 'Rp1.000'
-          }
-        ],
-        totalAmount: 'Rp212.181.234'
-      }
-    ]
-  },
-  {
-    year: 2021,
-    data: [
-      {
-        month: 'January',
-        accounts: [
-          {
-            id: 'jenius',
-            name: 'Jenius',
-            amount: 'Rp10.000.000'
-          },
-          {
-            id: 'bca',
-            name: 'BCA',
-            amount: 'Rp10.200.140.234'
-          },
-          {
-            id: 'ovo',
-            name: 'OVO',
-            amount: 'Rp2.040.000'
-          },
-          {
-            id: 'gopay',
-            name: 'Gopay',
-            amount: 'Rp1.000'
-          }
-        ],
-        totalAmount: 'Rp212.181.234'
-      },
-      {
-        month: 'February',
-        accounts: [
-          {
-            id: 'jenius',
-            name: 'Jenius',
-            amount: 'Rp10.000.000'
-          },
-          {
-            id: 'bca',
-            name: 'BCA',
-            amount: 'Rp10.200.140.234'
-          },
-          {
-            id: 'ovo',
-            name: 'OVO',
-            amount: 'Rp2.040.000'
-          },
-          {
-            id: 'gopay',
-            name: 'Gopay',
-            amount: 'Rp1.000'
-          }
-        ],
-        totalAmount: 'Rp212.181.234'
-      },
-      {
-        month: 'March',
-        accounts: [
-          {
-            id: 'jenius',
-            name: 'Jenius',
-            amount: 'Rp19.000.000'
-          },
-          {
-            id: 'bca',
-            name: 'BCA',
-            amount: 'Rp10.200.140.234'
-          },
-          {
-            id: 'ovo',
-            name: 'OVO',
-            amount: 'Rp2.040.000'
-          },
-          {
-            id: 'gopay',
-            name: 'Gopay',
-            amount: 'Rp1.000'
-          }
-        ],
-        totalAmount: 'Rp221.181.234'
-      },
-      {
-        month: 'April',
-        accounts: [
-          {
-            id: 'jenius',
-            name: 'Jenius',
-            amount: 'Rp19.000.000'
-          },
-          {
-            id: 'bca',
-            name: 'BCA',
-            amount: 'Rp10.200.140.234'
-          },
-          {
-            id: 'ovo',
-            name: 'OVO',
-            amount: 'Rp2.040.000'
-          },
-          {
-            id: 'gopay',
-            name: 'Gopay',
-            amount: 'Rp1.000'
-          }
-        ],
-        totalAmount: 'Rp221.181.234'
-      },
-      {
-        month: 'May',
-        accounts: [
-          {
-            id: 'jenius',
-            name: 'Jenius',
-            amount: 'Rp19.000.000'
-          },
-          {
-            id: 'bca',
-            name: 'BCA',
-            amount: 'Rp10.200.140.234'
-          },
-          {
-            id: 'ovo',
-            name: 'OVO',
-            amount: 'Rp2.040.000'
-          },
-          {
-            id: 'gopay',
-            name: 'Gopay',
-            amount: 'Rp1.000'
-          }
-        ],
-        totalAmount: 'Rp221.181.234'
-      }
-    ]
-  }
-];
+import useHistoryTabDetail from './useHistoryTabDetail';
+import Loading from './Loading/HistoryTabDetailLoading.component';
 
 const _renderHistoryTabDetailContent = items =>
   items.map((item, i) => {
@@ -208,10 +15,18 @@ const _renderHistoryTabDetailContent = items =>
     );
   });
 
+const _renderLoading = () => (
+  <Loading />
+);
+
 export const HistoryTabDetail = props => {
+  const [historyAssets, loading] = useHistoryTabDetail(props);
+
   return (
     <Swiper loop={false} showsPagination={false}>
-      {_renderHistoryTabDetailContent(data)}
+      {loading
+        ? _renderLoading()
+        : _renderHistoryTabDetailContent(historyAssets)}
     </Swiper>
   );
 };

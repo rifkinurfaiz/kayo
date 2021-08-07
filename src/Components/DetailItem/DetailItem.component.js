@@ -1,24 +1,25 @@
+// @flow
 import * as React from 'react';
 import { View, Text } from 'react-native';
 
 import styles from './DetailItem.styles';
 import config from '../../Config';
 
-const _dot = id => <View style={styles.dot(config.color[id])} />;
+const _renderIcon = id => <View style={styles.icon(config.color[id])} />;
 
 /**
- * Display first 4 of accounts
+ * Display first 4 of assets
  *
- * @param {Array} accounts - array of bank accounts
- * @returns {React.Node} Mapped account list component
+ * @param {Array} assets - array of assets
+ * @returns {React.Node} Mapped asset list component
  */
-const _mapAccounts = accounts =>
-  accounts.slice(0, 4).map((account, i) => {
+const _mapAssets = assets =>
+  assets.slice(0, 4).map((asset, i): React.Node => {
     return (
-      <View style={styles.accounts} key={i}>
-        {_dot(account.id)}
-        <Text style={styles.accountName}>{account.name}</Text>
-        <Text style={styles.amount(account.amount)}>{account.amount}</Text>
+      <View style={styles.assetContainer} key={i}>
+        {_renderIcon(asset.id)}
+        <Text style={styles.assetName} numberOfLines={1}>{asset.name}</Text>
+        <Text style={styles.amount(asset.amount)} numberOfLines={1}>{asset.amount}</Text>
       </View>
     );
   });
@@ -29,12 +30,12 @@ const _mapAccounts = accounts =>
  * @param {Object} props - props
  * @returns {React.Node} Detail item component
  */
-export const DetailItem = props => (
+export const DetailItem = (props: Object): React.Node => (
   <View style={styles.container}>
     <View style={styles.title}>
       <Text style={styles.textTitle}>{props.month}</Text>
     </View>
-    <View style={styles.accountsContainer}>{_mapAccounts(props.accounts)}</View>
+    <View style={styles.assetsContainer}>{_mapAssets(props.assets)}</View>
     <View style={styles.totalAmountContainer}>
       <Text style={styles.totalAmountText}>{props.totalAmount}</Text>
     </View>

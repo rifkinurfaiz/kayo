@@ -1,7 +1,8 @@
+// @flow
 import * as React from 'react';
 import { View, Text } from 'react-native';
 
-export const HistoryTabChart = props => {
+export const HistoryTabChart = (): React.Node => {
   return (
     <View>
       <Text>History tab chart</Text>
