@@ -7,10 +7,11 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { WealthMenu, HistoryMenu, ProfileMenu } from './src/Menus';
 import I18n from './src/Localization';
 import { appStyles } from './src/Assets';
+import colors from './src/Assets/Colors';
 
-const renderIcon = (color, icon) => (
+const renderIcon = (icon) => (
   <View>
-    <Icon style={[{ color }]} size={25} name={icon} />
+    <Icon style={[{ color: colors.primary.blue }]} size={25} name={icon} />
   </View>
 );
 
@@ -19,15 +20,16 @@ const TabNavigator = createMaterialBottomTabNavigator({
     screen: WealthMenu,
     navigationOptions: {
       tabBarLabel: I18n.t('wealth'),
-      tabBarIcon: ({ tintColor }) => renderIcon(tintColor, 'md-infinite'),
-      barStyle: appStyles.barStyle
+      tabBarIcon: () => renderIcon('md-infinite'),
+      barStyle: appStyles.barStyle,
+      tabBarOptions: { activeTintColor: 'blue' }
     }
   },
   History: {
     screen: HistoryMenu,
     navigationOptions: {
       tabBarLabel: I18n.t('history'),
-      tabBarIcon: ({ tintColor }) => renderIcon(tintColor, 'analytics'),
+      tabBarIcon: () => renderIcon('analytics'),
       barStyle: appStyles.barStyle
     }
   },
@@ -35,7 +37,7 @@ const TabNavigator = createMaterialBottomTabNavigator({
     screen: ProfileMenu,
     navigationOptions: {
       tabBarLabel: I18n.t('profile'),
-      tabBarIcon: ({ tintColor }) => renderIcon(tintColor, 'person-circle'),
+      tabBarIcon: () => renderIcon('person-circle'),
       barStyle: appStyles.barStyle
     }
   }

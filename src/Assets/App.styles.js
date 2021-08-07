@@ -3,5 +3,5 @@ import colors from './Colors';
 const { primary } = colors;
 
 export default {
-  barStyle: { backgroundColor: primary.blue }
+  barStyle: { backgroundColor: primary.white }
 };
