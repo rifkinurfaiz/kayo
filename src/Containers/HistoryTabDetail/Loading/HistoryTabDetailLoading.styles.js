@@ -1,6 +1,6 @@
 import { Dimensions } from 'react-native';
 
-import { size, platform } from '../../Utils';
+import { size, platform } from '../../../Utils';
 
 const { scaleWidth, scaleHeight } = size;
 const { width } = Dimensions.get('window');

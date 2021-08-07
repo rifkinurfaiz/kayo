@@ -1,3 +1,4 @@
+// @flow
 import * as React from 'react';
 import { View, Text } from 'react-native';
 
@@ -13,7 +14,7 @@ const _renderIcon = id => <View style={styles.icon(config.color[id])} />;
  * @returns {React.Node} Mapped asset list component
  */
 const _mapAssets = assets =>
-  assets.slice(0, 4).map((asset, i) => {
+  assets.slice(0, 4).map((asset, i): React.Node => {
     return (
       <View style={styles.assetContainer} key={i}>
         {_renderIcon(asset.id)}
@@ -29,7 +30,7 @@ const _mapAssets = assets =>
  * @param {Object} props - props
  * @returns {React.Node} Detail item component
  */
-export const DetailItem = props => (
+export const DetailItem = (props: Object): React.Node => (
   <View style={styles.container}>
     <View style={styles.title}>
       <Text style={styles.textTitle}>{props.month}</Text>

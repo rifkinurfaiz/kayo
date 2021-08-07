@@ -1,6 +1,9 @@
+// @flow
 import { useRef, useState } from 'react';
 
-const useHistoryTabDetailContent = () => {
+import type { Methods } from './HistoryTabDetailContent.types';
+
+const useHistoryTabDetailContent = (): Methods => {
   const bottomSheetRef = useRef(null);
   const [item, setItem] = useState({});
 

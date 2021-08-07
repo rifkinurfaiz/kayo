@@ -4,7 +4,7 @@ import Swiper from 'react-native-swiper';
 
 import HistoryTabDetailContent from '../HistoryTabDetailContent';
 import useHistoryTabDetail from './useHistoryTabDetail';
-import Loading from './HistoryTabDetailLoading.component';
+import Loading from './Loading/HistoryTabDetailLoading.component';
 
 const _renderHistoryTabDetailContent = items =>
   items.map((item, i) => {

@@ -1,6 +1,9 @@
+// @flow
 import * as React from 'react';
 
-const useHistoryTab = () => {
+import type { Methods } from './HistoryTab.types';
+
+const useHistoryTab = (): Methods => {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     { key: 'first', title: 'CHART' },

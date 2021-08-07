@@ -4,3 +4,9 @@ export type Props = {|
   data: Object,
   openBottomSheet: Function
 |};
+
+export type Methods = {|
+  bottomSheetRef: Object,
+  item: Object,
+  setItem: Function
+|}
