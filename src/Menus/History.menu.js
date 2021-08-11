@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { HistoryTabContainer } from '../Containers';
 import colors from '../Assets/Colors';
+import I18n from '../Localization';
 
 const { primary } = colors;
 
@@ -17,7 +18,7 @@ const History = () => {
           name="History"
           component={HistoryTabContainer}
           options={{
-            title: 'History',
+            title: I18n.t('history'),
             headerStyle: {
               elevation: 0,
               shadowOpacity: 0
