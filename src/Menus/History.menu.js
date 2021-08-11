@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { View } from 'react-native';
 
 import { HistoryTabContainer } from '../Containers';
 import colors from '../Assets/Colors';
