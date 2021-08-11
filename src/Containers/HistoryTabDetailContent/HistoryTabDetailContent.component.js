@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react';
+import { Fragment } from 'react';
 import type { Node } from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 
@@ -14,12 +15,12 @@ const _renderHistoryTabDetailContent = (
   setItem: Function
 ): Node =>
   props.data.map((item, i) => (
-    <View>
+    <Fragment key={`${props.year}-${i}`}>
       <TouchableOpacity
         onPress={props.openBottomSheet(bottomSheetRef, setItem, item)}>
-        <DetailItem key={i} {...item} />
+        <DetailItem {...item} />
       </TouchableOpacity>
-    </View>
+    </Fragment>
   ));
 
 export const HistoryTabDetailContent = (props: Props): Node => {

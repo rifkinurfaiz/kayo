@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { BottomNavigation, Text } from 'react-native-paper';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { NavigationContainer } from '@react-navigation/native';
 
 import { WealthMenu, HistoryMenu, ProfileMenu } from './Menus';
 import I18n from './Localization';
@@ -32,12 +33,15 @@ const Main = () => {
   });
 
   return (
-    <BottomNavigation
-      navigationState={{ index, routes }}
-      onIndexChange={setIndex}
-      renderScene={renderScene}
-      shifting={true}
-    />
+    <NavigationContainer>
+      <BottomNavigation
+        navigationState={{ index, routes }}
+        onIndexChange={setIndex}
+        renderScene={renderScene}
+        shifting={true}
+      />
+    </NavigationContainer>
+
   );
 };
 

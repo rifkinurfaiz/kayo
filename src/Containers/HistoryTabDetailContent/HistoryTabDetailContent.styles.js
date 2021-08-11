@@ -18,6 +18,6 @@ export default {
     fontSize: scaleFont(17)
   },
   scrollView: {
-    marginBottom: scaleHeight(70)
+    marginBottom: scaleHeight(40)
   }
 };

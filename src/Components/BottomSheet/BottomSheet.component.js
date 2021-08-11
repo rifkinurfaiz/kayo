@@ -2,6 +2,7 @@ import * as React from 'react';
 import { View, TouchableWithoutFeedback, Dimensions, ScrollView, Text } from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
 
+import rbStyles from './RBSheet.styles';
 import styles from './BottomSheet.styles';
 import config from '../../Config';
 
@@ -13,20 +14,20 @@ const Screen = {
 const _renderIcon = id => <View style={styles.icon(config.color[id])} />;
 
 const _renderAssetList = (item, i) => (
-  <View style={styles.assetListContainer}>
-    <View style={styles.assetList} key={i}>
+  <View style={rbStyles.assetListContainer}>
+    <View style={rbStyles.assetList} key={i}>
       {_renderIcon(item.id)}
-      <Text style={styles.assetName} numberOfLines={2}>{item.name}</Text>
-      <Text style={styles.amount}>{item.amount}</Text>
+      <Text style={rbStyles.assetName} numberOfLines={2}>{item.name}</Text>
+      <Text style={rbStyles.amount}>{item.amount}</Text>
     </View>
-    <Text style={styles.type}>{item.type}</Text>
+    <Text style={rbStyles.type}>{item.type}</Text>
   </View>
 
 );
 
 const _renderContent = ({ assets, totalAmount, month }) => (
   <View>
-    <Text style={styles.month}>{month}</Text>
+    <Text style={rbStyles.month}>{month}</Text>
     <TouchableWithoutFeedback>
       <ScrollView
         showsVerticalScrollIndicator={false}
@@ -34,7 +35,7 @@ const _renderContent = ({ assets, totalAmount, month }) => (
         {assets && assets.map((item, i) => (
           _renderAssetList(item, i)
         ))}
-        <Text style={styles.totalAmount}>{totalAmount}</Text>
+        <Text style={rbStyles.totalAmount}>{totalAmount}</Text>
       </ScrollView>
     </TouchableWithoutFeedback>
   </View>
@@ -47,7 +48,7 @@ const BottomSheet = React.forwardRef((props, ref) => {
       dragFromTopOnly={true}
       closeOnDragDown={true}
       height={Screen.height / props.height}
-      customStyles={styles}>
+      customStyles={rbStyles}>
       {_renderContent(props.item)}
     </RBSheet>
   );
