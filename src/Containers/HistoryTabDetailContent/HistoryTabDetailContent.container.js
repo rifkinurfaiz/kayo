@@ -4,8 +4,8 @@ import type { ComponentType } from 'react';
 import { compose, withProps } from 'recompose';
 
 import HistoryTabDetailContentComponent from './HistoryTabDetailContent.component';
-import type { Props } from './HistoryTabDetailContent.types';
-import constans from '../../Constants';
+import type { Props, PartialProps } from './HistoryTabDetailContent.types';
+import constants from '../../Constants';
 
 const { MONTHS: {
   JANUARY,
@@ -20,7 +20,7 @@ const { MONTHS: {
   OCTOBER,
   NOVEMBER,
   DECEMBER
-} } = constans;
+} } = constants;
 
 export const HistoryTabDetailContentContainer = (props: Props): React.Node => (
   <HistoryTabDetailContentComponent {...props} />
@@ -44,9 +44,14 @@ const openBottomSheet =
     bottomSheetRef.current.open();
   };
 
-const mapProps = (): Object => ({
+const shouldRenderAddMoreButton = (data: Array<Object>): boolean => {
+  return data[11] === undefined;
+};
+
+const mapProps = (): PartialProps => ({
   openBottomSheet,
-  mapNewMonthData
+  mapNewMonthData,
+  shouldRenderAddMoreButton
 });
 
 export default (compose(withProps(mapProps))(

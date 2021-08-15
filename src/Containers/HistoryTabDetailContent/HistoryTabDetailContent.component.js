@@ -51,18 +51,19 @@ const _renderAddMoreDetailContent = (
 
 export const HistoryTabDetailContent = (props: Props): Node => {
   const { bottomSheetRef, bottomSheetAddRef, item, setItem } = useHistoryTabDetailContent();
+  const { year, shouldRenderAddMoreButton, data } = props;
 
   return (
     <View>
       <DetailItemContent ref={bottomSheetRef} height={2} item={item} />
       <DetailItemContentAdd ref={bottomSheetAddRef} height={1.5} item={item} />
       <View style={styles.yearContainer}>
-        <Text style={styles.yearText}>{props.year}</Text>
+        <Text style={styles.yearText}>{year}</Text>
       </View>
       <ScrollView style={styles.scrollView}>
         <View style={styles.detailItemContainer}>
           {_renderHistoryTabDetailContent(props, bottomSheetRef, setItem)}
-          {_renderAddMoreDetailContent(props, bottomSheetAddRef, setItem)}
+          {shouldRenderAddMoreButton(data) && _renderAddMoreDetailContent(props, bottomSheetAddRef, setItem)}
         </View>
       </ScrollView>
     </View>
