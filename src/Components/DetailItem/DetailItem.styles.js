@@ -35,7 +35,7 @@ export default {
   textTitle: {
     color: primary.white,
     fontWeight: 'bold',
-    fontSize: 16
+    fontSize: scaleFont(16)
   },
   assetContainer: {
     margin: scaleWidth(5),
