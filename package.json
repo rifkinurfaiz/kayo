@@ -20,6 +20,7 @@
     "axios": "^0.21.1",
     "fast-memoize": "2.3.2",
     "flow-bin": "^0.155.1",
+    "moment": "^2.29.1",
     "react": "16.11.0",
     "react-native": "0.62.0",
     "react-native-gesture-handler": "1.10.3",

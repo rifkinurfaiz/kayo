@@ -5,7 +5,7 @@ import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import styles from './HistoryTabDetailContent.styles';
-import { DetailItem, BottomSheet } from '../../Components/';
+import { DetailItem, DetailItemContent, DetailItemContentAdd } from '../../Components/';
 import type { Props } from './HistoryTabDetailContent.types';
 import useHistoryTabDetailContent from './useHistoryTabDetailContent';
 import colors from '../../Assets/Colors';
@@ -28,34 +28,41 @@ const _renderIcon = (icon) => (
   <MaterialCommunityIcons color={colors.primary.blue} size={35} name={'plus-circle-outline'} />
 );
 
-const _renderAddMoreDetailContent = ( props: Props,
-  bottomSheetRef: Object,
+const _renderAddMoreDetailContent = (
+  { mapNewMonthData, data, openBottomSheet }: Props,
+  bottomSheetAddRef: Object,
   setItem: Function
-): Node => (
-  <TouchableOpacity
-    onPress={props.openBottomSheet(bottomSheetRef, setItem, [])}
-    style={styles.addMoreContainer}
-  >
-    <View style={styles.addMoreWrapper}>
-      {_renderIcon()}
-      <Text style={styles.addMoreText}>Add this month</Text>
-    </View>
-  </TouchableOpacity>
-);
+): Node => {
+  const index = (data).length - 1;
+  const nextMonthData = mapNewMonthData(data[index]);
+
+  return (
+    <TouchableOpacity
+      onPress={openBottomSheet(bottomSheetAddRef, setItem, nextMonthData)}
+      style={styles.addMoreContainer}
+    >
+      <View style={styles.addMoreWrapper}>
+        {_renderIcon()}
+        <Text style={styles.addMoreText}>Add this month</Text>
+      </View>
+    </TouchableOpacity>
+  );
+};
 
 export const HistoryTabDetailContent = (props: Props): Node => {
-  const { bottomSheetRef, item, setItem } = useHistoryTabDetailContent();
+  const { bottomSheetRef, bottomSheetAddRef, item, setItem } = useHistoryTabDetailContent();
 
   return (
     <View>
-      <BottomSheet ref={bottomSheetRef} height={2} item={item} />
+      <DetailItemContent ref={bottomSheetRef} height={2} item={item} />
+      <DetailItemContentAdd ref={bottomSheetAddRef} height={1.5} item={item} />
       <View style={styles.yearContainer}>
         <Text style={styles.yearText}>{props.year}</Text>
       </View>
       <ScrollView style={styles.scrollView}>
         <View style={styles.detailItemContainer}>
           {_renderHistoryTabDetailContent(props, bottomSheetRef, setItem)}
-          {_renderAddMoreDetailContent(props, bottomSheetRef, setItem)}
+          {_renderAddMoreDetailContent(props, bottomSheetAddRef, setItem)}
         </View>
       </ScrollView>
     </View>

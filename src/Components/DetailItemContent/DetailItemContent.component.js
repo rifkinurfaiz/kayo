@@ -4,7 +4,7 @@ import { View, TouchableWithoutFeedback, Dimensions, ScrollView, Text } from 're
 import RBSheet from 'react-native-raw-bottom-sheet';
 
 import rbStyles from './RBSheet.styles';
-import styles from './BottomSheet.styles';
+import styles from './DetailItemContent.styles';
 import config from '../../Config';
 
 const Screen = {
@@ -44,17 +44,15 @@ const _renderContent = ({ assets, totalAmount, month }) => (
   </View>
 );
 
-const BottomSheet = React.forwardRef((props, ref) => {
-  return (
-    <RBSheet
-      ref={ref}
-      dragFromTopOnly={true}
-      closeOnDragDown={true}
-      height={Screen.height / props.height}
-      customStyles={rbStyles}>
-      {_renderContent(props.item)}
-    </RBSheet>
-  );
-});
+const DetailItemContent = React.forwardRef((props, ref) => (
+  <RBSheet
+    ref={ref}
+    dragFromTopOnly={true}
+    closeOnDragDown={true}
+    height={Screen.height / props.height}
+    customStyles={rbStyles}>
+    {_renderContent(props.item)}
+  </RBSheet>
+));
 
-export default BottomSheet;
+export default DetailItemContent;

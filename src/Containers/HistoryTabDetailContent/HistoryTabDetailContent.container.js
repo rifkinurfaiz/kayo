@@ -5,10 +5,38 @@ import { compose, withProps } from 'recompose';
 
 import HistoryTabDetailContentComponent from './HistoryTabDetailContent.component';
 import type { Props } from './HistoryTabDetailContent.types';
+import constans from '../../Constants';
+
+const { MONTHS: {
+  JANUARY,
+  FEBRUARY,
+  MARCH,
+  APRIL,
+  MAY,
+  JUNE,
+  JULY,
+  AUGUST,
+  SEPTEMBER,
+  OCTOBER,
+  NOVEMBER,
+  DECEMBER
+} } = constans;
 
 export const HistoryTabDetailContentContainer = (props: Props): React.Node => (
   <HistoryTabDetailContentComponent {...props} />
 );
+
+const months = [JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER];
+
+const mapNewMonthData = data => () => {
+  const thisMonth = months.indexOf(data.month);
+  const nextMonth = months[thisMonth + 1];
+
+  return {
+    ...data,
+    month: nextMonth
+  };
+};
 
 const openBottomSheet =
   (bottomSheetRef: Object, setItem: Function, item: Object): Function => () => {
@@ -17,7 +45,8 @@ const openBottomSheet =
   };
 
 const mapProps = (): Object => ({
-  openBottomSheet
+  openBottomSheet,
+  mapNewMonthData
 });
 
 export default (compose(withProps(mapProps))(
