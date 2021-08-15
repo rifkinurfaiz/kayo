@@ -31,7 +31,7 @@ export default {
     },
     shadowOpacity: 0.2,
     shadowRadius: 1.4,
-    elevation: 5
+    elevation: 2
   },
   title: {
     padding: scaleWidth(10),
