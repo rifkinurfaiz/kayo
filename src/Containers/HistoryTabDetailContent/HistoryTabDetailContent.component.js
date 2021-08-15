@@ -5,10 +5,12 @@ import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import styles from './HistoryTabDetailContent.styles';
-import { DetailItem, DetailItemContent, DetailItemContentAdd } from '../../Components/';
+import { DetailItem, DetailItemContent, DetailItemContentAdd } from '../../Components';
 import type { Props } from './HistoryTabDetailContent.types';
 import useHistoryTabDetailContent from './useHistoryTabDetailContent';
 import colors from '../../Assets/Colors';
+import I18n from '../../Localization';
+
 
 const _renderHistoryTabDetailContent = (
   props: Props,
@@ -43,7 +45,7 @@ const _renderAddMoreDetailContent = (
     >
       <View style={styles.addMoreWrapper}>
         {_renderIcon()}
-        <Text style={styles.addMoreText}>Add this month</Text>
+        <Text style={styles.addMoreText}>{I18n.t('add-more-button')}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -54,7 +56,7 @@ export const HistoryTabDetailContent = (props: Props): Node => {
   const { year, shouldRenderAddMoreButton, data } = props;
 
   return (
-    <View>
+    <View style={styles.container}>
       <DetailItemContent ref={bottomSheetRef} height={2} item={item} />
       <DetailItemContentAdd ref={bottomSheetAddRef} height={1.5} item={item} />
       <View style={styles.yearContainer}>

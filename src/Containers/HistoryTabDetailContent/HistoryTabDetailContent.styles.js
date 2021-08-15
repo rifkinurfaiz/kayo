@@ -18,6 +18,9 @@ const getWidth = () => {
 };
 
 export default {
+  container: {
+    backgroundColor: '#EEEEEE'
+  },
   detailItemContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -38,8 +41,6 @@ export default {
   },
   addMoreContainer: {
     borderRadius: 5,
-    borderWidth: 1,
-    borderColor: '#CDCDCD',
     width: getWidth(),
     marginBottom: scaleHeight(10)
   },

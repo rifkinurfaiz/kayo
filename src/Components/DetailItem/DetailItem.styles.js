@@ -23,7 +23,15 @@ export default {
     borderRadius: 5,
     width: getWidth(),
     backgroundColor: primary.white,
-    marginBottom: scaleHeight(10)
+    marginBottom: scaleHeight(10),
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.4,
+    elevation: 5
   },
   title: {
     padding: scaleWidth(10),
