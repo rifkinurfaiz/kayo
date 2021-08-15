@@ -44,9 +44,9 @@ const openBottomSheet =
     bottomSheetRef.current.open();
   };
 
-const shouldRenderAddMoreButton = (data: Array<Object>): boolean => {
-  return data[11] === undefined;
-};
+const shouldRenderAddMoreButton = (data: Array<Object>): boolean => (
+  data[11] === undefined
+);
 
 const mapProps = (): PartialProps => ({
   openBottomSheet,
