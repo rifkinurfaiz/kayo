@@ -26,9 +26,9 @@ export const HistoryTabDetailContentContainer = (props: Props): React.Node => (
   <HistoryTabDetailContentComponent {...props} />
 );
 
-const months = [JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER];
-
 const mapNewMonthData = data => () => {
+  const months = [JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER];
+
   const thisMonth = months.indexOf(data.month);
   const nextMonth = months[thisMonth + 1];
 
