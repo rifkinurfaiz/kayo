@@ -1,5 +1,6 @@
 export default {
   history: 'History',
   profile: 'Profile',
-  wealth: 'Wealth'
+  dashboard: 'Dashboard',
+  'add-more-button': 'Add this month wealth'
 };

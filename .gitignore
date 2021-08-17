@@ -64,3 +64,5 @@ coverage/
 
 # Vs code
 .vscode/
+
+.env

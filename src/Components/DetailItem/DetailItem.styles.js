@@ -23,7 +23,15 @@ export default {
     borderRadius: 5,
     width: getWidth(),
     backgroundColor: primary.white,
-    marginBottom: scaleHeight(10)
+    marginBottom: scaleHeight(10),
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.4,
+    elevation: 2
   },
   title: {
     padding: scaleWidth(10),
@@ -35,7 +43,7 @@ export default {
   textTitle: {
     color: primary.white,
     fontWeight: 'bold',
-    fontSize: 16
+    fontSize: scaleFont(16)
   },
   assetContainer: {
     margin: scaleWidth(5),

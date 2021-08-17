@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { Fragment } from 'react';
 import Swiper from 'react-native-swiper';
 
 import HistoryTabDetailContent from '../HistoryTabDetailContent';
@@ -7,13 +7,11 @@ import useHistoryTabDetail from './useHistoryTabDetail';
 import Loading from './Loading/HistoryTabDetailLoading.component';
 
 const _renderHistoryTabDetailContent = items =>
-  items.map((item, i) => {
-    return (
-      <View>
-        <HistoryTabDetailContent key={i} {...item} />
-      </View>
-    );
-  });
+  items.map((item, i) => (
+    <Fragment key={i}>
+      <HistoryTabDetailContent {...item} />
+    </Fragment>
+  ));
 
 const _renderLoading = () => (
   <Loading />
