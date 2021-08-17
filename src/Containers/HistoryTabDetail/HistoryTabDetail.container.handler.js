@@ -1,12 +1,14 @@
 import axios from 'axios';
 
+import { AWS_API_KEY, AWS_ENDPOINT } from '@env';
+
 const getHistoryAssets = () => async () => {
   const config = {
     headers: {
-      'x-api-key': 'A2ZhB5gDWtZ2uliFmv8qafBV3scoOeN7ZPUrWgq4'
+      'x-api-key': AWS_API_KEY
     }
   };
-  const url = 'https://2fiqm0x6pb.execute-api.us-east-2.amazonaws.com/default/getAssets';
+  const url = `${AWS_ENDPOINT}/getAssets`;
 
   try {
     const { data } = await axios.get(url, config);
