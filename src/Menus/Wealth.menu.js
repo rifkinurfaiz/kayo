@@ -7,7 +7,7 @@ class Wealth extends React.Component {
   render() {
     return (
       <View>
-        <Text>{I18n.t('wealth')}</Text>
+        <Text>{I18n.t('dashboard')}</Text>
       </View>
     );
   }

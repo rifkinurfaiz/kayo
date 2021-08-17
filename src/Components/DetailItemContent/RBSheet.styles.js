@@ -1,8 +1,6 @@
-import memoize from 'fast-memoize';
-
 import colors from '../../Assets/Colors';
 import { size } from '../../Utils';
-const { scaleWidth, scaleHeight, scaleSize, scaleFont } = size;
+const { scaleWidth, scaleHeight, scaleFont } = size;
 
 export default {
   container: {
@@ -49,13 +47,6 @@ export default {
     color: colors.primary.grey,
     marginLeft: 'auto'
   },
-  icon: memoize(color => ({
-    width: scaleSize(25),
-    height: scaleSize(25),
-    borderRadius: 15,
-    backgroundColor: color,
-    marginRight: scaleWidth(5)
-  })),
   assetListContainer: {
     marginBottom: scaleHeight(10)
   }
