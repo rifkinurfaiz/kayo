@@ -5,18 +5,13 @@ import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import styles from './HistoryTabDetailContent.styles';
-import { DetailItem, DetailItemContent, DetailItemContentAdd } from '../../Components';
+import { DetailItem, DetailItemContent } from '../../Components';
 import type { Props } from './HistoryTabDetailContent.types';
 import useHistoryTabDetailContent from './useHistoryTabDetailContent';
 import colors from '../../Assets/Colors';
 import I18n from '../../Localization';
 
-
-const _renderHistoryTabDetailContent = (
-  props: Props,
-  bottomSheetRef: Object,
-  setItem: Function
-): Node =>
+const _renderHistoryTabDetailContent = (props: Props, bottomSheetRef: Object, setItem: Function): Node =>
   props.data.map((item, i) => (
     <Fragment key={`${props.year}-${i}`}>
       <TouchableOpacity
@@ -30,11 +25,8 @@ const _renderIcon = (icon) => (
   <MaterialCommunityIcons color={colors.primary.blue} size={35} name={'plus-circle-outline'} />
 );
 
-const _renderAddMoreDetailContent = (
-  { mapNewMonthData, data, openBottomSheet }: Props,
-  bottomSheetAddRef: Object,
-  setItem: Function
-): Node => {
+const _renderAddMoreDetailContent = (props: Props, bottomSheetAddRef: Object, setItem: Function): Node => {
+  const { mapNewMonthData, data, openBottomSheet } = props;
   const index = (data).length - 1;
   const nextMonthData = mapNewMonthData(data[index]);
 
@@ -58,7 +50,7 @@ export const HistoryTabDetailContent = (props: Props): Node => {
   return (
     <View style={styles.container}>
       <DetailItemContent ref={bottomSheetRef} height={2} item={item} />
-      <DetailItemContentAdd ref={bottomSheetAddRef} height={1.5} item={item} />
+      <DetailItemContent ref={bottomSheetAddRef} height={1.5} item={item} />
       <View style={styles.yearContainer}>
         <Text style={styles.yearText}>{year}</Text>
       </View>
