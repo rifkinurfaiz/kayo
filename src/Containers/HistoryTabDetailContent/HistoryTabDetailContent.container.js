@@ -44,12 +44,17 @@ const openBottomSheet =
     bottomSheetRef.current.open();
   };
 
+const showYearList = (bottomSheetRef: Object): Function => () => {
+  bottomSheetRef.current.open();
+};
+
 const shouldRenderAddMoreButton = (data: Array<Object>): boolean => (
   data[11] === undefined
 );
 
 const mapProps = (): PartialProps => ({
   openBottomSheet,
+  showYearList,
   mapNewMonthData,
   shouldRenderAddMoreButton
 });

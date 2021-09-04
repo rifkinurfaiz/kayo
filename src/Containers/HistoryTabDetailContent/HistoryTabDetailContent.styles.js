@@ -19,7 +19,8 @@ const getWidth = () => {
 
 export default {
   container: {
-    backgroundColor: '#EEEEEE'
+    backgroundColor: '#EEEEEE',
+    borderRadius: 10
   },
   detailItemContainer: {
     flexDirection: 'row',
@@ -63,5 +64,8 @@ export default {
     marginTop: scaleHeight(5),
     fontSize: scaleFont(14),
     color: primary.grey
+  },
+  draggableIcon: {
+    backgroundColor: '#000'
   }
 };
