@@ -35,10 +35,9 @@ export default {
   yearWrapper: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    // backgroundColor: primary.blue,
+    justifyContent: 'space-evenly',
     width: scaleWidth(80),
-    padding: 10,
+    padding: 3,
     borderRadius: 3
   },
   yearText: {
@@ -47,7 +46,7 @@ export default {
     fontSize: scaleFont(17)
   },
   scrollView: {
-    marginBottom: scaleHeight(50)
+    marginBottom: scaleHeight(40)
   },
   addMoreContainer: {
     borderRadius: 5,
