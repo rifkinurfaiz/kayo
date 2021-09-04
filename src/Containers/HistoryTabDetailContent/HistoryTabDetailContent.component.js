@@ -43,17 +43,32 @@ const _renderAddMoreDetailContent = (props: Props, bottomSheetAddRef: Object, se
   );
 };
 
+const _renderBottomSheet = (bottomSheetRef: Object, bottomSheetAddRef: Object, item: Array<Object>) => (
+  <View>
+    <DetailItemContent ref={bottomSheetRef} height={2} item={item} />
+    <DetailItemContent ref={bottomSheetAddRef} height={1.5} item={item} />
+  </View>
+);
+
+const _renderYearDropDown = (year: number) => (
+  <View style={styles.yearContainer}>
+    <TouchableOpacity
+      style={styles.yearWrapper}
+    >
+      <Text style={styles.yearText}>{year}</Text>
+      <MaterialCommunityIcons color={colors.primary.black} size={22} name={'chevron-down'} />
+    </TouchableOpacity>
+  </View>
+);
+
 export const HistoryTabDetailContent = (props: Props): Node => {
   const { bottomSheetRef, bottomSheetAddRef, item, setItem } = useHistoryTabDetailContent();
   const { year, shouldRenderAddMoreButton, data } = props;
 
   return (
     <View style={styles.container}>
-      <DetailItemContent ref={bottomSheetRef} height={2} item={item} />
-      <DetailItemContent ref={bottomSheetAddRef} height={1.5} item={item} />
-      <View style={styles.yearContainer}>
-        <Text style={styles.yearText}>{year}</Text>
-      </View>
+      {_renderBottomSheet(bottomSheetRef, bottomSheetAddRef, item)}
+      {_renderYearDropDown(year)}
       <ScrollView style={styles.scrollView}>
         <View style={styles.detailItemContainer}>
           {_renderHistoryTabDetailContent(props, bottomSheetRef, setItem)}

@@ -32,12 +32,22 @@ export default {
     alignItems: 'center',
     paddingVertical: scaleHeight(10)
   },
+  yearWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    // backgroundColor: primary.blue,
+    width: scaleWidth(80),
+    padding: 10,
+    borderRadius: 3
+  },
   yearText: {
     fontWeight: 'bold',
+    color: primary.black,
     fontSize: scaleFont(17)
   },
   scrollView: {
-    marginBottom: scaleHeight(40)
+    marginBottom: scaleHeight(50)
   },
   addMoreContainer: {
     borderRadius: 5,
