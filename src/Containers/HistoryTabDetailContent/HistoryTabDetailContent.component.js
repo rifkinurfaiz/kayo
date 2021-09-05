@@ -53,7 +53,7 @@ const _renderBottomSheet = (bottomSheetRef: Object, bottomSheetAddRef: Object, i
   </View>
 );
 
-const _renderYearBottomSheet = (ref: Object) => (
+const _renderYearBottomSheet = (ref: Object, years: Array<number>) => (
   <RBSheet
     ref={ref}
     dragFromTopOnly={true}
@@ -61,7 +61,14 @@ const _renderYearBottomSheet = (ref: Object) => (
     customStyles={styles}
     height={height / 3}
   >
-    <View/>
+    {years.map(year => (
+      <TouchableOpacity
+        style={styles.yearBottomSheetContainer}
+        onPress={() => {}}
+      >
+        <Text style={styles.yearBottomSheetText}>{year}</Text>
+      </TouchableOpacity>
+    ))}
   </RBSheet>
 );
 
@@ -79,13 +86,14 @@ const _renderYearDropDownButton = (props: Props, bottomSheetYearListRef: Object,
 
 export const HistoryTabDetailContent = (props: Props): Node => {
   const { bottomSheetRef, bottomSheetAddRef, bottomSheetYearListRef, item, setItem } = useHistoryTabDetailContent();
-  const { year, shouldRenderAddMoreButton, data } = props;
+  const { years, shouldRenderAddMoreButton, data } = props;
+  const defaultYear = years[years.length - 1];
 
   return (
     <View style={styles.container}>
       {_renderBottomSheet(bottomSheetRef, bottomSheetAddRef, item)}
-      {_renderYearBottomSheet(bottomSheetYearListRef)}
-      {_renderYearDropDownButton(props, bottomSheetYearListRef, year)}
+      {_renderYearBottomSheet(bottomSheetYearListRef, years)}
+      {_renderYearDropDownButton(props, bottomSheetYearListRef, defaultYear)}
       <ScrollView style={styles.scrollView}>
         <View style={styles.detailItemContainer}>
           {_renderHistoryTabDetailContent(props, bottomSheetRef, setItem)}

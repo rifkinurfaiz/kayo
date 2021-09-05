@@ -1,6 +1,6 @@
 // @flow
 export type Props = {|
-  year: number,
+  years: Array<number>,
   data: Object,
   shouldRenderAddMoreButton: Function,
   mapNewMonthData: Function,

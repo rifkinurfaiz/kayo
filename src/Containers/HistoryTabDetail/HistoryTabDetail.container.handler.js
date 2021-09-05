@@ -8,8 +8,7 @@ const getHistoryAssets = () => async () => {
       'x-api-key': AWS_API_KEY
     }
   };
-  const url = `${AWS_ENDPOINT}/getAssets`;
-
+  const url = 'https://yxa5s46aoc.execute-api.ap-southeast-1.amazonaws.com/default/getAssets';
   try {
     const { data } = await axios.get(url, config);
 

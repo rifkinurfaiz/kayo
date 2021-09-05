@@ -67,5 +67,13 @@ export default {
   },
   draggableIcon: {
     backgroundColor: '#000'
+  },
+  yearBottomSheetContainer: {
+    paddingTop: scaleHeight(15),
+    paddingHorizontal: scaleWidth(20)
+  },
+  yearBottomSheetText: {
+    fontSize: scaleFont(20),
+    fontWeight: 'bold'
   }
 };
