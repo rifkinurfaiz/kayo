@@ -16,7 +16,7 @@ const { height } = Dimensions.get('window');
 
 const _renderHistoryTabDetailContent = (props: Props, bottomSheetRef: Object, setItem: Function): Node =>
   props.data.map((item, i) => (
-    <Fragment key={`${props.year}-${i}`}>
+    <Fragment key={i}>
       <TouchableOpacity
         onPress={props.openBottomSheet(bottomSheetRef, setItem, item)}>
         <DetailItem {...item} />
