@@ -4,9 +4,17 @@ const useHistoryTabDetail = props => {
   const [historyAssets, setHistoryAssets] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const getHistoryAssetsByYear = year => async () => {
+    setLoading(true);
+
+    const data = await props.getHistoryAssets(year);
+
+    setHistoryAssets(data);
+    setLoading(false);
+  };
+
   useEffect(() => {
     const getData = async () => {
-
       const data = await props.getHistoryAssets();
 
       setHistoryAssets(data);
@@ -16,7 +24,7 @@ const useHistoryTabDetail = props => {
     getData();
   }, [props]);
 
-  return [historyAssets, loading];
+  return [historyAssets, loading, getHistoryAssetsByYear];
 };
 
 export default useHistoryTabDetail;

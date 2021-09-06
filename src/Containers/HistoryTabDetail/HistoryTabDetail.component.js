@@ -9,12 +9,16 @@ const _renderHistoryTabDetailContent = props => <HistoryTabDetailContent {...pro
 const _renderLoading = () => <Loading />;
 
 export const HistoryTabDetail = props => {
-  const [historyAssets, loading] = useHistoryTabDetail(props);
+  const [historyAssets, loading, getHistoryAssetsByYear] = useHistoryTabDetail(props);
+  const historyTabDetailContentProps = {
+    getHistoryAssetsByYear,
+    ...historyAssets
+  };
 
   return (
     loading
       ? _renderLoading()
-      : _renderHistoryTabDetailContent(historyAssets)
+      : _renderHistoryTabDetailContent(historyTabDetailContentProps)
   );
 };
 

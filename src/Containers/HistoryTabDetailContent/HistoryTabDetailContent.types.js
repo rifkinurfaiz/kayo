@@ -1,11 +1,12 @@
 // @flow
 export type Props = {|
   years: Object,
-  data: Object,
+  result: Object,
   shouldRenderAddMoreButton: Function,
   mapNewMonthData: Function,
   openBottomSheet: Function,
-  showYearList: Function
+  showYearList: Function,
+  getHistoryAssetsByYear: Function
 |};
 
 export type PartialProps = $Values<Props>;
